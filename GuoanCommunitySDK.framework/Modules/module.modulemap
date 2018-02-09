@@ -1,0 +1,6 @@
+framework module GuoanCommunitySDK {
+  umbrella header "GuoanCommunitySDK.h"
+
+  export *
+  module * { export * }
+}
