@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		293581BBCFA39463C1224E2F /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F54516046A73D24B6EF216 /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a */; };
+		69E2440EAFEC19030F0D847D /* libPods-GuoanCommunitySDK-iOS-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F11C45D99A190FFA672018DF /* libPods-GuoanCommunitySDK-iOS-Example.a */; };
+		78C88E78C7F899F2E5962C41 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B42A80BA6DA3A17E1B27454 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a */; };
+		FE1319C8202D830800C0DDA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1319C7202D830800C0DDA0 /* AppDelegate.m */; };
+		FE1319CB202D830800C0DDA0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1319CA202D830800C0DDA0 /* ViewController.m */; };
+		FE1319D0202D830800C0DDA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1319CF202D830800C0DDA0 /* Assets.xcassets */; };
+		FE1319D3202D830800C0DDA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1319D1202D830800C0DDA0 /* LaunchScreen.storyboard */; };
+		FE1319D6202D830800C0DDA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1319D5202D830800C0DDA0 /* main.m */; };
+		FE1319E0202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1319DF202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleTests.m */; };
+		FE1319EB202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1319EA202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE1319DC202D830800C0DDA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE1319BB202D830800C0DDA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE1319C2202D830800C0DDA0;
+			remoteInfo = "GuoanCommunitySDK-iOS-Example";
+		};
+		FE1319E7202D830800C0DDA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE1319BB202D830800C0DDA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE1319C2202D830800C0DDA0;
+			remoteInfo = "GuoanCommunitySDK-iOS-Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		095805290E8D50D6FB8A06BB /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		36107997D127AE5B7323C9A7 /* Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig"; sourceTree = "<group>"; };
+		6B42A80BA6DA3A17E1B27454 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuoanCommunitySDK-iOS-ExampleUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB08B8469036E694AAD0DA6 /* Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		70EE63D311018A8717822F7B /* Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		74144A7BA4FD0EF3910F6EEE /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		985BB0BBC0FC98BBE4D2C6D8 /* Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8F54516046A73D24B6EF216 /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuoanCommunitySDK-iOS-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11C45D99A190FFA672018DF /* libPods-GuoanCommunitySDK-iOS-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuoanCommunitySDK-iOS-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE1319C3202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GuoanCommunitySDK-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE1319C6202D830800C0DDA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE1319C7202D830800C0DDA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE1319C9202D830800C0DDA0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE1319CA202D830800C0DDA0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE1319CF202D830800C0DDA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE1319D2202D830800C0DDA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE1319D4202D830800C0DDA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE1319D5202D830800C0DDA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE1319DB202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GuoanCommunitySDK-iOS-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE1319DF202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuoanCommunitySDK_iOS_ExampleTests.m; sourceTree = "<group>"; };
+		FE1319E1202D830800C0DDA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE1319E6202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GuoanCommunitySDK-iOS-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE1319EA202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuoanCommunitySDK_iOS_ExampleUITests.m; sourceTree = "<group>"; };
+		FE1319EC202D830800C0DDA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE1319C0202D830800C0DDA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E2440EAFEC19030F0D847D /* libPods-GuoanCommunitySDK-iOS-Example.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE1319D8202D830800C0DDA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293581BBCFA39463C1224E2F /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE1319E3202D830800C0DDA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C88E78C7F899F2E5962C41 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		493BFF491D1835A30ACC1FA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F11C45D99A190FFA672018DF /* libPods-GuoanCommunitySDK-iOS-Example.a */,
+				E8F54516046A73D24B6EF216 /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a */,
+				6B42A80BA6DA3A17E1B27454 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CEB14ED2B134A65FFFE5CDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FB08B8469036E694AAD0DA6 /* Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig */,
+				36107997D127AE5B7323C9A7 /* Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig */,
+				985BB0BBC0FC98BBE4D2C6D8 /* Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig */,
+				70EE63D311018A8717822F7B /* Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig */,
+				095805290E8D50D6FB8A06BB /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig */,
+				74144A7BA4FD0EF3910F6EEE /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE1319BA202D830800C0DDA0 = {
+			isa = PBXGroup;
+			children = (
+				FE1319C5202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example */,
+				FE1319DE202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleTests */,
+				FE1319E9202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleUITests */,
+				FE1319C4202D830800C0DDA0 /* Products */,
+				9CEB14ED2B134A65FFFE5CDD /* Pods */,
+				493BFF491D1835A30ACC1FA1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FE1319C4202D830800C0DDA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE1319C3202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example.app */,
+				FE1319DB202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleTests.xctest */,
+				FE1319E6202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE1319C5202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example */ = {
+			isa = PBXGroup;
+			children = (
+				FE1319C6202D830800C0DDA0 /* AppDelegate.h */,
+				FE1319C7202D830800C0DDA0 /* AppDelegate.m */,
+				FE1319C9202D830800C0DDA0 /* ViewController.h */,
+				FE1319CA202D830800C0DDA0 /* ViewController.m */,
+				FE1319CF202D830800C0DDA0 /* Assets.xcassets */,
+				FE1319D1202D830800C0DDA0 /* LaunchScreen.storyboard */,
+				FE1319D4202D830800C0DDA0 /* Info.plist */,
+				FE1319D5202D830800C0DDA0 /* main.m */,
+			);
+			path = "GuoanCommunitySDK-iOS-Example";
+			sourceTree = "<group>";
+		};
+		FE1319DE202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE1319DF202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleTests.m */,
+				FE1319E1202D830800C0DDA0 /* Info.plist */,
+			);
+			path = "GuoanCommunitySDK-iOS-ExampleTests";
+			sourceTree = "<group>";
+		};
+		FE1319E9202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE1319EA202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleUITests.m */,
+				FE1319EC202D830800C0DDA0 /* Info.plist */,
+			);
+			path = "GuoanCommunitySDK-iOS-ExampleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE1319C2202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE1319EF202D830800C0DDA0 /* Build configuration list for PBXNativeTarget "GuoanCommunitySDK-iOS-Example" */;
+			buildPhases = (
+				64B72AE0027CF4D1780430AF /* [CP] Check Pods Manifest.lock */,
+				FE1319BF202D830800C0DDA0 /* Sources */,
+				FE1319C0202D830800C0DDA0 /* Frameworks */,
+				FE1319C1202D830800C0DDA0 /* Resources */,
+				A54CEBBA74945E2C2530B22C /* [CP] Embed Pods Frameworks */,
+				BE4F095DBF86036C88B98253 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GuoanCommunitySDK-iOS-Example";
+			productName = "GuoanCommunitySDK-iOS-Example";
+			productReference = FE1319C3202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE1319DA202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE1319F2202D830800C0DDA0 /* Build configuration list for PBXNativeTarget "GuoanCommunitySDK-iOS-ExampleTests" */;
+			buildPhases = (
+				C26620CB7AD339377A6F64AF /* [CP] Check Pods Manifest.lock */,
+				FE1319D7202D830800C0DDA0 /* Sources */,
+				FE1319D8202D830800C0DDA0 /* Frameworks */,
+				FE1319D9202D830800C0DDA0 /* Resources */,
+				8B92F9D4847BCB59E7C0527C /* [CP] Embed Pods Frameworks */,
+				D520F315B825A8C96D6B8FA0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE1319DD202D830800C0DDA0 /* PBXTargetDependency */,
+			);
+			name = "GuoanCommunitySDK-iOS-ExampleTests";
+			productName = "GuoanCommunitySDK-iOS-ExampleTests";
+			productReference = FE1319DB202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE1319E5202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE1319F5202D830800C0DDA0 /* Build configuration list for PBXNativeTarget "GuoanCommunitySDK-iOS-ExampleUITests" */;
+			buildPhases = (
+				B301AF996B8A98EEB6C934F1 /* [CP] Check Pods Manifest.lock */,
+				FE1319E2202D830800C0DDA0 /* Sources */,
+				FE1319E3202D830800C0DDA0 /* Frameworks */,
+				FE1319E4202D830800C0DDA0 /* Resources */,
+				1E5A6B9A4D7FA11AB37F0615 /* [CP] Embed Pods Frameworks */,
+				CA76D275130DE52C05C200CE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE1319E8202D830800C0DDA0 /* PBXTargetDependency */,
+			);
+			name = "GuoanCommunitySDK-iOS-ExampleUITests";
+			productName = "GuoanCommunitySDK-iOS-ExampleUITests";
+			productReference = FE1319E6202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE1319BB202D830800C0DDA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Guoan Community (Beijing) Technology Co., Ltd.";
+				TargetAttributes = {
+					FE1319C2202D830800C0DDA0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					FE1319DA202D830800C0DDA0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE1319C2202D830800C0DDA0;
+					};
+					FE1319E5202D830800C0DDA0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FE1319C2202D830800C0DDA0;
+					};
+				};
+			};
+			buildConfigurationList = FE1319BE202D830800C0DDA0 /* Build configuration list for PBXProject "GuoanCommunitySDK-iOS-Example" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE1319BA202D830800C0DDA0;
+			productRefGroup = FE1319C4202D830800C0DDA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE1319C2202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example */,
+				FE1319DA202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleTests */,
+				FE1319E5202D830800C0DDA0 /* GuoanCommunitySDK-iOS-ExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE1319C1202D830800C0DDA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE1319D3202D830800C0DDA0 /* LaunchScreen.storyboard in Resources */,
+				FE1319D0202D830800C0DDA0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE1319D9202D830800C0DDA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE1319E4202D830800C0DDA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E5A6B9A4D7FA11AB37F0615 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64B72AE0027CF4D1780430AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuoanCommunitySDK-iOS-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B92F9D4847BCB59E7C0527C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A54CEBBA74945E2C2530B22C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B301AF996B8A98EEB6C934F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuoanCommunitySDK-iOS-ExampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE4F095DBF86036C88B98253 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C26620CB7AD339377A6F64AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuoanCommunitySDK-iOS-ExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA76D275130DE52C05C200CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D520F315B825A8C96D6B8FA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE1319BF202D830800C0DDA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE1319CB202D830800C0DDA0 /* ViewController.m in Sources */,
+				FE1319D6202D830800C0DDA0 /* main.m in Sources */,
+				FE1319C8202D830800C0DDA0 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE1319D7202D830800C0DDA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE1319E0202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE1319E2202D830800C0DDA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE1319EB202D830800C0DDA0 /* GuoanCommunitySDK_iOS_ExampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE1319DD202D830800C0DDA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE1319C2202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example */;
+			targetProxy = FE1319DC202D830800C0DDA0 /* PBXContainerItemProxy */;
+		};
+		FE1319E8202D830800C0DDA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE1319C2202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example */;
+			targetProxy = FE1319E7202D830800C0DDA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE1319D1202D830800C0DDA0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE1319D2202D830800C0DDA0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE1319ED202D830800C0DDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE1319EE202D830800C0DDA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE1319F0202D830800C0DDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FB08B8469036E694AAD0DA6 /* Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE1319F1202D830800C0DDA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36107997D127AE5B7323C9A7 /* Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FE1319F3202D830800C0DDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 985BB0BBC0FC98BBE4D2C6D8 /* Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuoanCommunitySDK-iOS-Example.app/GuoanCommunitySDK-iOS-Example";
+			};
+			name = Debug;
+		};
+		FE1319F4202D830800C0DDA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70EE63D311018A8717822F7B /* Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuoanCommunitySDK-iOS-Example.app/GuoanCommunitySDK-iOS-Example";
+			};
+			name = Release;
+		};
+		FE1319F6202D830800C0DDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 095805290E8D50D6FB8A06BB /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GuoanCommunitySDK-iOS-Example";
+			};
+			name = Debug;
+		};
+		FE1319F7202D830800C0DDA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74144A7BA4FD0EF3910F6EEE /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GuoanCommunitySDK-iOS-Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE1319BE202D830800C0DDA0 /* Build configuration list for PBXProject "GuoanCommunitySDK-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE1319ED202D830800C0DDA0 /* Debug */,
+				FE1319EE202D830800C0DDA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE1319EF202D830800C0DDA0 /* Build configuration list for PBXNativeTarget "GuoanCommunitySDK-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE1319F0202D830800C0DDA0 /* Debug */,
+				FE1319F1202D830800C0DDA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE1319F2202D830800C0DDA0 /* Build configuration list for PBXNativeTarget "GuoanCommunitySDK-iOS-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE1319F3202D830800C0DDA0 /* Debug */,
+				FE1319F4202D830800C0DDA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE1319F5202D830800C0DDA0 /* Build configuration list for PBXNativeTarget "GuoanCommunitySDK-iOS-ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE1319F6202D830800C0DDA0 /* Debug */,
+				FE1319F7202D830800C0DDA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE1319BB202D830800C0DDA0 /* Project object */;
+}

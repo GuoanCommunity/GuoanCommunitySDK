@@ -1,0 +1,12 @@
+PODS:
+  - GuoanCommunitySDK (0.1.0)
+
+DEPENDENCIES:
+  - GuoanCommunitySDK
+
+SPEC CHECKSUMS:
+  GuoanCommunitySDK: 57beb0d0e0b2db1cf103cd6f8712c24c3300d094
+
+PODFILE CHECKSUM: d1acb847fcbdc888a5b3643824c2a780a1dad083
+
+COCOAPODS: 1.4.0
