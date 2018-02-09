@@ -245,7 +245,7 @@
 				TargetAttributes = {
 					FE1319C2202D830800C0DDA0 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					FE1319DA202D830800C0DDA0 = {
 						CreatedOnToolsVersion = 9.2;
@@ -615,11 +615,14 @@
 			baseConfigurationReference = 6FB08B8469036E694AAD0DA6 /* Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PYB36QQD2A;
 				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "be150584-76bf-4f22-a3c8-ac58aa297606";
+				PROVISIONING_PROFILE_SPECIFIER = general_apple2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -629,11 +632,14 @@
 			baseConfigurationReference = 36107997D127AE5B7323C9A7 /* Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PYB36QQD2A;
 				INFOPLIST_FILE = "GuoanCommunitySDK-iOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.guoan.community.sdk.GuoanCommunitySDK-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "be150584-76bf-4f22-a3c8-ac58aa297606";
+				PROVISIONING_PROFILE_SPECIFIER = general_apple2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
