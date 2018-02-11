@@ -1,0 +1,6 @@
+framework module Pods_GuoanCommunitySDK_Swift_ExampleUITests {
+  umbrella header "Pods-GuoanCommunitySDK-Swift-ExampleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
