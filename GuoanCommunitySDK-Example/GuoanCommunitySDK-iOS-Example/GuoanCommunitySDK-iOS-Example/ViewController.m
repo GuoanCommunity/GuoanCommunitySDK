@@ -18,7 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [GuoanCommunity test];
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    [temporaryBarButtonItem setTitle: self.navigationItem.title];
+    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    
+    self.title = @"GuoanCommunitySDK Example";
+    
+    [GuoanCommunity intoCommunityHome:self];
 }
 
 @end

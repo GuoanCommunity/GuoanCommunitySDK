@@ -136,10 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				FE3FB3AA20300CEC00636B82 /* AppDelegate.swift */,
-				FE3FB3AC20300CEC00636B82 /* ViewController.swift */,
 				FE3FB3B120300CEC00636B82 /* Assets.xcassets */,
-				FE3FB3B320300CEC00636B82 /* LaunchScreen.storyboard */,
 				FE3FB3B620300CEC00636B82 /* Info.plist */,
+				FE3FB3B320300CEC00636B82 /* LaunchScreen.storyboard */,
+				FE3FB3AC20300CEC00636B82 /* ViewController.swift */,
 			);
 			path = "GuoanCommunitySDK-Swift-Example";
 			sourceTree = "<group>";

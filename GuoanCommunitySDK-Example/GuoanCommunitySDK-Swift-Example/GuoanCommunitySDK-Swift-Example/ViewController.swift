@@ -14,7 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GuoanCommunity.test()
+        let temporaryBarButtonItem = UIBarButtonItem()
+        temporaryBarButtonItem.title = title ?? ""
+        navigationItem.backBarButtonItem = temporaryBarButtonItem
+        
+        self.title = "GuoanCommunitySDK Example"
+        
+        GuoanCommunity.intoCommunityHome(self)
     }
 
 
