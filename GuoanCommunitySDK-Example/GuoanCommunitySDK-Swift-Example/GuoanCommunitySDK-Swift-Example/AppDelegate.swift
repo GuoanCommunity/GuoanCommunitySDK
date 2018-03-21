@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GuoanCommunitySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = rootViewController
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
+        
+        GuoanCommunity.setLogEnabled(true)
+        GuoanCommunity.setAppKey("", appSecret: "")
         
         return true
     }

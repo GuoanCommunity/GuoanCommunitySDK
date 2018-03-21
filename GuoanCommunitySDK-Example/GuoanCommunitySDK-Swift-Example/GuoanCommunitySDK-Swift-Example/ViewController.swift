@@ -20,9 +20,25 @@ class ViewController: UIViewController {
         
         self.title = "GuoanCommunitySDK Example"
         
+        let button = UIButton()
+        view.addSubview(button)
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 22)
+        button.center = view.center
+        button.setTitleColor(UIColor.red, for: .normal)
+        button.setTitle("openSDK", for: .normal)
+        button.addTarget(self, action: #selector(openSDK), for: .touchUpInside)
+        
+        GuoanCommunity.onTryLoginHandler {
+            print("去登录");
+        }
+        
+        GuoanCommunity.onShareHandler { (title, desc, link, imgUrl) in
+            print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
+        }
+    }
+    
+    @objc func openSDK() {
         GuoanCommunity.intoCommunityHome(self)
     }
 
-
 }
-

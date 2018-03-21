@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import <GuoanCommunitySDK/GuoanCommunitySDK.h>
 
 @interface AppDelegate ()
 
@@ -22,6 +23,9 @@
     self.window.rootViewController = vc;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [GuoanCommunity setLogEnabled:YES];
+    [GuoanCommunity setAppKey:@"" appSecret:@""];
     
     return YES;
 }

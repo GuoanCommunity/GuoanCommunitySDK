@@ -1,11 +1,11 @@
 PODS:
-  - GuoanCommunitySDK (0.1.0)
+  - GuoanCommunitySDK (0.1.1)
 
 DEPENDENCIES:
   - GuoanCommunitySDK
 
 SPEC CHECKSUMS:
-  GuoanCommunitySDK: 57beb0d0e0b2db1cf103cd6f8712c24c3300d094
+  GuoanCommunitySDK: 5295e9f8a057366e1fa5dd8e73ce660f8025a38f
 
 PODFILE CHECKSUM: bb5513b20a09e7cb6c8d55b5b703c180b84b0efa
 

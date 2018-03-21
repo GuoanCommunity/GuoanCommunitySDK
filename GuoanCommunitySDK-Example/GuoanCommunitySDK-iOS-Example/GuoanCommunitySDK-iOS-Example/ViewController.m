@@ -24,6 +24,24 @@
     
     self.title = @"GuoanCommunitySDK Example";
     
+    UIButton *button = [[UIButton alloc] init];
+    [self.view addSubview:button];
+    button.frame = CGRectMake(0, 0, 100, 50);
+    button.center = self.view.center;
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button setTitle:@"openSDK" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(openSDK) forControlEvents:UIControlEventTouchUpInside];
+    
+    [GuoanCommunity onTryLoginHandler:^{
+        NSLog(@"去登录");
+    }];
+    
+    [GuoanCommunity onShareHandler:^(NSString *title, NSString *desc, NSString *link, NSString *imgUrl) {
+        NSLog(@"去分享%@, %@, %@, %@", title, desc, link, imgUrl);
+    }];
+}
+
+- (void)openSDK {
     [GuoanCommunity intoCommunityHome:self];
 }
 
