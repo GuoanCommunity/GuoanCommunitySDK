@@ -1,11 +1,19 @@
 PODS:
-  - GuoanCommunitySDK (0.1.1)
+  - GuoanCommunitySDK (0.2.0):
+    - ZLPhotoBrowser
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - ZLPhotoBrowser (2.6.4):
+    - SDWebImage
 
 DEPENDENCIES:
   - GuoanCommunitySDK
 
 SPEC CHECKSUMS:
-  GuoanCommunitySDK: 5295e9f8a057366e1fa5dd8e73ce660f8025a38f
+  GuoanCommunitySDK: 5eae29aa0cfd3e81eca9cf74cf18dbe2c3a7c4e5
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  ZLPhotoBrowser: 2125e7b7ea328c959a5ead1204c83b3bb0f0bf5a
 
 PODFILE CHECKSUM: bb5513b20a09e7cb6c8d55b5b703c180b84b0efa
 

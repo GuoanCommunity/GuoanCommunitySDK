@@ -24,13 +24,21 @@
     
     self.title = @"GuoanCommunitySDK Example";
     
-    UIButton *button = [[UIButton alloc] init];
-    [self.view addSubview:button];
-    button.frame = CGRectMake(0, 0, 100, 50);
-    button.center = self.view.center;
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [button setTitle:@"openSDK" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(openSDK) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *button0 = [[UIButton alloc] init];
+    [self.view addSubview:button0];
+    button0.frame = CGRectMake(0, 0, 300, 50);
+    button0.center = self.view.center;
+    [button0 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button0 setTitle:@"openGuoanCommunitySDK" forState:UIControlStateNormal];
+    [button0 addTarget:self action:@selector(button0Click) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *button1 = [[UIButton alloc] init];
+    [self.view addSubview:button1];
+    button1.frame = CGRectMake(0, 0, 300, 50);
+    button1.center = CGPointMake(self.view.center.x, self.view.center.y + 50);
+    [button1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button1 setTitle:@"openTouTiao" forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(button1Click) forControlEvents:UIControlEventTouchUpInside];
     
     [GuoanCommunity onTryLoginHandler:^{
         NSLog(@"去登录");
@@ -39,10 +47,23 @@
     [GuoanCommunity onShareHandler:^(NSString *title, NSString *desc, NSString *link, NSString *imgUrl) {
         NSLog(@"去分享%@, %@, %@, %@", title, desc, link, imgUrl);
     }];
+    
+    [GuoanCommunity onGetUserInfoHandler:^GuoanCommunityUserInfo *{
+        GuoanCommunityUserInfo *userInfo = [[GuoanCommunityUserInfo alloc] init];
+        userInfo.nickname = @"nickname";
+        userInfo.imgUrl = @"https://imgcdn.guoanshequ.com/pad/bbld76adw738x5o91fu9tiqy6zm1gkq7.png";
+        userInfo.mobilephone = @"13800000000";
+        userInfo.token = @"token";
+        return userInfo;
+    }];
 }
 
-- (void)openSDK {
+- (void)button0Click {
     [GuoanCommunity intoCommunityHome:self];
+}
+
+- (void)button1Click {
+    [GuoanCommunity intoCommunity:self urlString: @"http://demo.mulpush.cn/community"];
 }
 
 @end

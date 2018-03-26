@@ -26,6 +26,36 @@ it, simply add the following line to your Podfile:
 pod 'GuoanCommunitySDK'
 ```
 
+## Get Started
+
+```swift
+// 打开日志
+GuoanCommunity.setLogEnabled(true)
+// 注册SDK
+GuoanCommunity.setAppKey("", appSecret: "")
+// 打开国安社区首页
+GuoanCommunity.intoCommunityHome(self)
+// 打开指定页面
+GuoanCommunity.intoCommunity(self, urlString: "http://...")
+
+GuoanCommunity.onTryLoginHandler {
+    print("去登录");
+}
+        
+GuoanCommunity.onShareHandler { (title, desc, link, imgUrl) in
+    print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
+}
+
+GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
+    let userInfo = GuoanCommunityUserInfo()
+    userInfo.nickname = "nickname"
+    userInfo.imgUrl = "https://imgcdn.guoanshequ.com/pad/bbld76adw738x5o91fu9tiqy6zm1gkq7.png"
+    userInfo.mobilephone = "13800000000"
+    userInfo.token = "token"
+    return userInfo
+}
+```
+
 ## Author
 
 octmon, octmon@qq.com
