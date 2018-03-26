@@ -20,13 +20,21 @@ class ViewController: UIViewController {
         
         self.title = "GuoanCommunitySDK Example"
         
-        let button = UIButton()
-        view.addSubview(button)
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 22)
-        button.center = view.center
-        button.setTitleColor(UIColor.red, for: .normal)
-        button.setTitle("openSDK", for: .normal)
-        button.addTarget(self, action: #selector(openSDK), for: .touchUpInside)
+        let button0 = UIButton()
+        view.addSubview(button0)
+        button0.frame = CGRect(x: 0, y: 0, width: 300, height: 22)
+        button0.center = view.center
+        button0.setTitleColor(UIColor.red, for: .normal)
+        button0.setTitle("openGuoanCommunitySDK", for: .normal)
+        button0.addTarget(self, action: #selector(button0Click), for: .touchUpInside)
+        
+        let button1 = UIButton()
+        view.addSubview(button1)
+        button1.frame = CGRect(x: 0, y: 0, width: 300, height: 22)
+        button1.center = CGPoint(x: view.center.x, y: view.center.y + 50)
+        button1.setTitleColor(UIColor.red, for: .normal)
+        button1.setTitle("openTouTiao", for: .normal)
+        button1.addTarget(self, action: #selector(button1Click), for: .touchUpInside)
         
         GuoanCommunity.onTryLoginHandler {
             print("去登录");
@@ -35,10 +43,23 @@ class ViewController: UIViewController {
         GuoanCommunity.onShareHandler { (title, desc, link, imgUrl) in
             print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
         }
+        
+        GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
+            let userInfo = GuoanCommunityUserInfo()
+            userInfo.nickname = "nickname"
+            userInfo.imgUrl = "https://imgcdn.guoanshequ.com/pad/bbld76adw738x5o91fu9tiqy6zm1gkq7.png"
+            userInfo.mobilephone = "13800000000"
+            userInfo.token = "token"
+            return userInfo
+        }
     }
     
-    @objc func openSDK() {
+    @objc func button0Click() {
         GuoanCommunity.intoCommunityHome(self)
+    }
+    
+    @objc func button1Click() {
+        GuoanCommunity.intoCommunity(self, urlString: "http://demo.mulpush.cn/community")
     }
 
 }

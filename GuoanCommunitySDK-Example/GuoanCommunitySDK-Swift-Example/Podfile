@@ -7,6 +7,7 @@ target 'GuoanCommunitySDK-Swift-Example' do
 
   # Pods for GuoanCommunitySDK-Swift-Example
   pod 'GuoanCommunitySDK'
+  pod 'ZLPhotoBrowser'
 
   target 'GuoanCommunitySDK-Swift-ExampleTests' do
     inherit! :search_paths

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "GuoanCommunityUserInfo.h"
 
 @interface GuoanCommunity : NSObject
 
@@ -29,11 +30,20 @@
 + (void)log:(NSString *)format, ...;
 
 /**
- 跳转到国安社区首页
+ 跳转到SDK首页
 
- @param current 当前控制器
+ @param current 宿主控制器
  */
 + (void)intoCommunityHome:(UIViewController *)current;
+
+/**
+ 跳转到SDK指定H5页面
+ 
+ @param current 当前控制器
+ @param urlString H5链接地址
+ */
+
++ (void)intoCommunity:(UIViewController *)current urlString:(NSString *)urlString;
 
 /**
  获取sdk版本号
@@ -43,6 +53,13 @@
 + (NSString *)sdkVersion;
 
 /**
+ 调起宿主关闭SDK
+ 
+ @param handler 回调
+ */
++ (void)onCloseCommunityHandler:(void(^)(void))handler;
+
+/**
  调起宿主登录
 
  @param handler 回调
@@ -50,9 +67,16 @@
 + (void)onTryLoginHandler:(void(^)(void))handler;
 
 /**
+ 调起宿主获取用户信息
+ 
+ @param handler 回调
+ */
++ (void)onGetUserInfoHandler:(GuoanCommunityUserInfo *(^)(void))handler;
+
+/**
  调起宿主分享
 
- @param handler 回调
+ @param handler 回调 (NSString *title, NSString *desc, NSString *link, NSString *imgUrl)
  */
 + (void)onShareHandler:(void (^)(NSString *title, NSString *desc, NSString *link, NSString *imgUrl))handler;
 
