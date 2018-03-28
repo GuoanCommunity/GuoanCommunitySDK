@@ -134,10 +134,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMBase64/GTMBase64.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZLPhotoBrowser/ZLPhotoBrowser.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMBase64/GTMBase64.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZLPhotoBrowser/ZLPhotoBrowser.framework"
 fi

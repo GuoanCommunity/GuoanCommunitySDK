@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "GuoanCommunityUserInfo.h"
+#import "GuoanCommunityLocation.h"
 
 @interface GuoanCommunity : NSObject
 
@@ -74,10 +75,31 @@
 + (void)onGetUserInfoHandler:(GuoanCommunityUserInfo *(^)(void))handler;
 
 /**
+ 调起宿主获取位置信息
+
+ @param handler 回调
+ */
++ (void)onGetTempAddress:(GuoanCommunityLocation *(^)(void))handler;
+
+/**
+ 调起宿主获取地址列表信息
+ 
+ @param handler 回调
+ */
++ (void)onGetUserAddressList:(NSString *(^)(void))handler;
+
+/**
  调起宿主分享
 
  @param handler 回调 (NSString *title, NSString *desc, NSString *link, NSString *imgUrl)
  */
 + (void)onShareHandler:(void (^)(NSString *title, NSString *desc, NSString *link, NSString *imgUrl))handler;
+
+/**
+ 调起宿主支付
+ 
+ @param handler 回调 (NSString *orderId, double amount)
+ */
++ (void)onPay:(void (^)(NSString *orderId, double amount))handler;
 
 @end
