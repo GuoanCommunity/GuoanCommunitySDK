@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		293581BBCFA39463C1224E2F /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F54516046A73D24B6EF216 /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a */; };
-		69E2440EAFEC19030F0D847D /* libPods-GuoanCommunitySDK-iOS-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F11C45D99A190FFA672018DF /* libPods-GuoanCommunitySDK-iOS-Example.a */; };
-		78C88E78C7F899F2E5962C41 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B42A80BA6DA3A17E1B27454 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a */; };
+		A27491550345430DCE34FB4D /* Pods_GuoanCommunitySDK_iOS_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67A480918BC8BE08198BBAC /* Pods_GuoanCommunitySDK_iOS_ExampleTests.framework */; };
+		AB18A2D02A6898D4718146F8 /* Pods_GuoanCommunitySDK_iOS_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C718C2B854AB83FF71F6E8B /* Pods_GuoanCommunitySDK_iOS_ExampleUITests.framework */; };
+		E8DD5F495E33FC33546AB9DB /* Pods_GuoanCommunitySDK_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5190C5347BEE518D2FE9D1C5 /* Pods_GuoanCommunitySDK_iOS_Example.framework */; };
 		FE1319C8202D830800C0DDA0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1319C7202D830800C0DDA0 /* AppDelegate.m */; };
 		FE1319CB202D830800C0DDA0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1319CA202D830800C0DDA0 /* ViewController.m */; };
 		FE1319D0202D830800C0DDA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1319CF202D830800C0DDA0 /* Assets.xcassets */; };
@@ -38,14 +38,14 @@
 
 /* Begin PBXFileReference section */
 		095805290E8D50D6FB8A06BB /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C718C2B854AB83FF71F6E8B /* Pods_GuoanCommunitySDK_iOS_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuoanCommunitySDK_iOS_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36107997D127AE5B7323C9A7 /* Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example.release.xcconfig"; sourceTree = "<group>"; };
-		6B42A80BA6DA3A17E1B27454 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuoanCommunitySDK-iOS-ExampleUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5190C5347BEE518D2FE9D1C5 /* Pods_GuoanCommunitySDK_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuoanCommunitySDK_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB08B8469036E694AAD0DA6 /* Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		70EE63D311018A8717822F7B /* Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		74144A7BA4FD0EF3910F6EEE /* Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		985BB0BBC0FC98BBE4D2C6D8 /* Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E8F54516046A73D24B6EF216 /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuoanCommunitySDK-iOS-ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F11C45D99A190FFA672018DF /* libPods-GuoanCommunitySDK-iOS-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuoanCommunitySDK-iOS-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67A480918BC8BE08198BBAC /* Pods_GuoanCommunitySDK_iOS_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuoanCommunitySDK_iOS_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1319C3202D830800C0DDA0 /* GuoanCommunitySDK-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GuoanCommunitySDK-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1319C6202D830800C0DDA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE1319C7202D830800C0DDA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69E2440EAFEC19030F0D847D /* libPods-GuoanCommunitySDK-iOS-Example.a in Frameworks */,
+				E8DD5F495E33FC33546AB9DB /* Pods_GuoanCommunitySDK_iOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293581BBCFA39463C1224E2F /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a in Frameworks */,
+				A27491550345430DCE34FB4D /* Pods_GuoanCommunitySDK_iOS_ExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78C88E78C7F899F2E5962C41 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a in Frameworks */,
+				AB18A2D02A6898D4718146F8 /* Pods_GuoanCommunitySDK_iOS_ExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +94,9 @@
 		493BFF491D1835A30ACC1FA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F11C45D99A190FFA672018DF /* libPods-GuoanCommunitySDK-iOS-Example.a */,
-				E8F54516046A73D24B6EF216 /* libPods-GuoanCommunitySDK-iOS-ExampleTests.a */,
-				6B42A80BA6DA3A17E1B27454 /* libPods-GuoanCommunitySDK-iOS-ExampleUITests.a */,
+				5190C5347BEE518D2FE9D1C5 /* Pods_GuoanCommunitySDK_iOS_Example.framework */,
+				B67A480918BC8BE08198BBAC /* Pods_GuoanCommunitySDK_iOS_ExampleTests.framework */,
+				2C718C2B854AB83FF71F6E8B /* Pods_GuoanCommunitySDK_iOS_ExampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 		FE1319BB202D830800C0DDA0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Guoan Community (Beijing) Technology Co., Ltd.";
 				TargetAttributes = {
 					FE1319C2202D830800C0DDA0 = {
@@ -360,9 +360,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMBase64/GTMBase64.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ZLPhotoBrowser/ZLPhotoBrowser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunOSSiOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMBase64.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZLPhotoBrowser.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -527,6 +536,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -534,6 +544,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -582,6 +593,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -589,6 +601,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
