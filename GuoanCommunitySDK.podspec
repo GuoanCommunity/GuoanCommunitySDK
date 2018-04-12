@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GuoanCommunitySDK'
-  s.version          = '0.4.0'
+  s.version          = '0.5.0'
   s.summary          = 'GuoanCommunitySDK for iOS.'
 
   s.homepage         = 'https://github.com/GuoanCommunity/GuoanCommunitySDK-iOS'
@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'GuoanCommunitySDK.framework'
 
   s.dependency 'ZLPhotoBrowser' # https://github.com/longitachi/ZLPhotoBrowser
-  s.dependency 'AliyunOSSiOS' # https://promotion.aliyun.com/ntms/act/ossdoclist.html
+  s.dependency 'AliyunOSSiOS', '~> 2.9.2' # https://promotion.aliyun.com/ntms/act/ossdoclist.html
   s.dependency 'GTMBase64' # https://github.com/MxABC/GTMBase64
 end
