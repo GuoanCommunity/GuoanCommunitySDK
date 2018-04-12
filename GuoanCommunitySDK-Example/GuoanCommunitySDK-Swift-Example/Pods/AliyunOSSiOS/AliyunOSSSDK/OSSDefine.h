@@ -16,22 +16,16 @@
 #elif TARGET_OS_OSX
 #define OSSUAPrefix                             @"aliyun-sdk-mac"
 #endif
-#define OSSSDKVersion                           @"2.10.0"
+#define OSSSDKVersion                           @"2.9.2"
 
 #define OSSListBucketResultXMLTOKEN             @"ListBucketResult"
 #define OSSNameXMLTOKEN                         @"Name"
 #define OSSDelimiterXMLTOKEN                    @"Delimiter"
 #define OSSMarkerXMLTOKEN                       @"Marker"
-#define OSSKeyMarkerXMLTOKEN                    @"KeyMarker"
 #define OSSNextMarkerXMLTOKEN                   @"NextMarker"
-#define OSSNextKeyMarkerXMLTOKEN                @"NextKeyMarker"
-#define OSSUploadIdMarkerXMLTOKEN               @"UploadIdMarker"
-#define OSSNextUploadIdMarkerXMLTOKEN           @"NextUploadIdMarker"
 #define OSSMaxKeysXMLTOKEN                      @"MaxKeys"
-#define OSSMaxUploadsXMLTOKEN                   @"MaxUploads"
 #define OSSIsTruncatedXMLTOKEN                  @"IsTruncated"
 #define OSSContentsXMLTOKEN                     @"Contents"
-#define OSSUploadXMLTOKEN                       @"Upload"
 #define OSSKeyXMLTOKEN                          @"Key"
 #define OSSLastModifiedXMLTOKEN                 @"LastModified"
 #define OSSETagXMLTOKEN                         @"ETag"

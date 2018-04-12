@@ -64,6 +64,14 @@ class ViewController: UIViewController {
         GuoanCommunity.onGetUserAddressList { () -> String? in
             return "[{\"id\":\"e05a7f8d60384f69b598448979404bf1\",\"storeId\":\"00000000000000000000000000000034\",\"mobilephone\":\"13800000000\",\"adName\":\"朝阳区\",\"cityName\":\"北京市\",\"shoppingCartCount\":0,\"defaultFlg\":\"yes\",\"longitude\":116.46281433,\"provinceCode\":\"110000\",\"latitude\":39.92126846,\"cityCode\":\"010\",\"customerId\":\"308057e8d4b844b7bc83a7e7050317f9\",\"detailAddress\":\"测试小区\",\"placename\":\"北京国际中心\",\"provinceName\":\"北京市\",\"adCode\":\"110105\",\"name\":\"测试\"}]"
         }
+        
+        GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
+            let store = GuoanCommunityStoreInfo()
+            store.storeId = "00000000000000000000000000000034"
+            store.storeName = "社区门店"
+            store.storeScheme = "normal"
+            return store
+        }
     }
     
     @objc func button0Click() {

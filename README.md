@@ -55,6 +55,14 @@ GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
     return userInfo
 }
 
+GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
+    let store = GuoanCommunityStoreInfo()
+    store.storeId = "00000000000000000000000000000034"
+    store.storeName = "社区门店"
+    store.storeScheme = "normal"
+    return store
+}
+
 GuoanCommunity.onGetTempAddress { () -> GuoanCommunityLocation? in
     let location = GuoanCommunityLocation()
     location.cityCode = "010"

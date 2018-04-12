@@ -181,7 +181,6 @@
 				FE1319C0202D830800C0DDA0 /* Frameworks */,
 				FE1319C1202D830800C0DDA0 /* Resources */,
 				A54CEBBA74945E2C2530B22C /* [CP] Embed Pods Frameworks */,
-				BE4F095DBF86036C88B98253 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,8 +199,6 @@
 				FE1319D7202D830800C0DDA0 /* Sources */,
 				FE1319D8202D830800C0DDA0 /* Frameworks */,
 				FE1319D9202D830800C0DDA0 /* Resources */,
-				8B92F9D4847BCB59E7C0527C /* [CP] Embed Pods Frameworks */,
-				D520F315B825A8C96D6B8FA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,8 +218,6 @@
 				FE1319E2202D830800C0DDA0 /* Sources */,
 				FE1319E3202D830800C0DDA0 /* Frameworks */,
 				FE1319E4202D830800C0DDA0 /* Resources */,
-				1E5A6B9A4D7FA11AB37F0615 /* [CP] Embed Pods Frameworks */,
-				CA76D275130DE52C05C200CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,21 +301,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E5A6B9A4D7FA11AB37F0615 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		64B72AE0027CF4D1780430AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,21 +317,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B92F9D4847BCB59E7C0527C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A54CEBBA74945E2C2530B22C /* [CP] Embed Pods Frameworks */ = {
@@ -396,28 +361,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BE4F095DBF86036C88B98253 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example-resources.sh",
-				"${PODS_ROOT}/ZLPhotoBrowser/PhotoBrowser/resource/ZLPhotoActionSheet.xib",
-				"${PODS_ROOT}/ZLPhotoBrowser/PhotoBrowser/resource/ZLPhotoBrowserCell.xib",
-				"${PODS_ROOT}/ZLPhotoBrowser/PhotoBrowser/resource/ZLPhotoBrowser.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZLPhotoActionSheet.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZLPhotoBrowserCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZLPhotoBrowser.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-Example/Pods-GuoanCommunitySDK-iOS-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C26620CB7AD339377A6F64AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,36 +377,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CA76D275130DE52C05C200CE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleUITests/Pods-GuoanCommunitySDK-iOS-ExampleUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D520F315B825A8C96D6B8FA0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-iOS-ExampleTests/Pods-GuoanCommunitySDK-iOS-ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

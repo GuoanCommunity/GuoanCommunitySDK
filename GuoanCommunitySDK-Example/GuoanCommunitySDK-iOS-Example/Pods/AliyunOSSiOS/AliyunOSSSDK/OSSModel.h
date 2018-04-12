@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OSSRequest.h"
-#import "OSSResult.h"
 
 @class OSSAllRequestNeededMessage;
 @class OSSFederationToken;
@@ -17,7 +15,56 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, OSSOperationType) {
+    OSSOperationTypeGetService,
+    OSSOperationTypeCreateBucket,
+    OSSOperationTypeDeleteBucket,
+    OSSOperationTypeGetBucket,
+    OSSOperationTypeGetBucketACL,
+    OSSOperationTypeHeadObject,
+    OSSOperationTypeGetObject,
+    OSSOperationTypePutObject,
+    OSSOperationTypePutObjectACL,
+    OSSOperationTypeAppendObject,
+    OSSOperationTypeDeleteObject,
+    OSSOperationTypeCopyObject,
+    OSSOperationTypeInitMultipartUpload,
+    OSSOperationTypeUploadPart,
+    OSSOperationTypeCompleteMultipartUpload,
+    OSSOperationTypeAbortMultipartUpload,
+    OSSOperationTypeListMultipart,
+    OSSOperationTypeTriggerCallBack
+};
+
+typedef NS_ENUM(NSInteger, OSSClientErrorCODE) {
+    OSSClientErrorCodeNetworkingFailWithResponseCode0,
+    OSSClientErrorCodeSignFailed,
+    OSSClientErrorCodeFileCantWrite,
+    OSSClientErrorCodeInvalidArgument,
+    OSSClientErrorCodeNilUploadid,
+    OSSClientErrorCodeTaskCancelled,
+    OSSClientErrorCodeNetworkError,
+    OSSClientErrorCodeInvalidCRC,
+    OSSClientErrorCodeCannotResumeUpload,
+    OSSClientErrorCodeExcpetionCatched,
+    OSSClientErrorCodeNotKnown
+};
+
+typedef NS_ENUM(NSUInteger, OSSRequestCRCFlag) {
+    OSSRequestCRCUninitialized,
+    OSSRequestCRCOpen,
+    OSSRequestCRCClosed
+};
+
+typedef void (^OSSNetworkingUploadProgressBlock) (int64_t bytesSent, int64_t totalBytesSent, int64_t totalBytesExpectedToSend);
+typedef void (^OSSNetworkingDownloadProgressBlock) (int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite);
+typedef void (^OSSNetworkingRetryBlock) (void);
+typedef void (^OSSNetworkingCompletionHandlerBlock) (id _Nullable responseObject, NSError * _Nullable error);
+typedef void (^OSSNetworkingOnRecieveDataBlock) (NSData * data);
+
+typedef NSString* _Nullable (^OSSCustomSignContentBlock) (NSString * contentToSign, NSError **error);
 typedef OSSFederationToken * _Nullable (^OSSGetFederationTokenBlock) (void);
+typedef NSData * _Nullable (^OSSResponseDecoderBlock) (NSData * data);
 
 /**
  Categories NSDictionary
@@ -253,7 +300,67 @@ Sets the session Id for background file transmission
 - (NSString *)toHeaderString;
 @end
 
+
 #pragma mark RequestAndResultClass
+
+/**
+ The base class of request to OSS.
+ */
+@interface OSSRequest : NSObject
+/**
+ Flag of requiring authentication. It's per each request.
+ */
+@property (nonatomic, assign) BOOL isAuthenticationRequired;
+
+/**
+ Flag of request canceled.
+ */
+@property (nonatomic, assign) BOOL isCancelled;
+
+/**
+ 开启crc校验的标志位(默认值0代表未设置,此时会以clientConfiguration中的开关为准,1代表开启crc64
+ 验证,2代表关闭crc64的验证。
+ */
+@property (nonatomic, assign) OSSRequestCRCFlag crcFlag;
+
+/**
+ Cancels the request
+ */
+- (void)cancel;
+@end
+
+/**
+ The base class of result from OSS.
+ */
+@interface OSSResult : NSObject
+
+/**
+ The http response code.
+ */
+@property (nonatomic, assign) NSInteger httpResponseCode;
+
+/**
+ The http headers, in the form of key value dictionary.
+ */
+@property (nonatomic, copy) NSDictionary * httpResponseHeaderFields;
+
+/**
+The request Id. It's the value of header x-oss-request-id, which is created from OSS server.
+It's a unique Id represents this request. This is used for troubleshooting when you contact OSS support.
+ */
+@property (nonatomic, copy) NSString * requestId;
+
+/**
+ It's the value of header x-oss-hash-crc64ecma, which is created from OSS server.
+ */
+@property (nonatomic, copy) NSString *remoteCRC64ecma;
+
+/**
+ It's the value of local Data.
+ */
+@property (nonatomic, copy) NSString *localCRC64ecma;
+
+@end
 
 /**
  The request to list all buckets of current user.
@@ -1194,110 +1301,6 @@ The result class of listing uploaded parts.
 @end
 
 /**
- The request class of listing all multipart uploads.
- */
-@interface OSSListMultipartUploadsRequest : OSSRequest
-/**
- Bucket name.
- */
-@property (nonatomic, copy) NSString * bucketName;
-
-/**
- The delimiter.
- */
-@property (nonatomic, copy) NSString * delimiter;
-
-/**
- The prefix.
- */
-@property (nonatomic, copy) NSString * prefix;
-
-/**
- The max number of uploads.
- */
-@property (nonatomic, assign) int32_t maxUploads;
-
-/**
- The key marker filter.
- */
-@property (nonatomic, copy) NSString * keyMarker;
-
-/**
- The upload Id marker.
- */
-@property (nonatomic, copy) NSString * uploadIdMarker;
-
-/**
- The encoding type of the object in the response body.
- */
-@property (nonatomic, copy) NSString * encodingType;
-
-/**
- Generates the query parameter dictionary according to the properties.
- */
-- (NSMutableDictionary *)getQueryDict;
-
-@end
-
-/**
- The result class of listing multipart uploads.
- */
-@interface OSSListMultipartUploadsResult : OSSResult
-/**
- Bucket name
- */
-@property (nonatomic, copy) NSString * bucketName;
-
-/**
- The marker filter of the objects returned---all objects returned are greater than this marker in lexicographic order.
- */
-@property (nonatomic, copy) NSString * keyMarker;
-
-/**
- The delimiter to differentiate the folder object and file object.
- For object whose name ends with the delimiter, then it's treated as folder or common prefixes.
- */
-@property (nonatomic, copy) NSString * delimiter;
-
-/**
- The prefix of the objects returned----the returned objects must have this prefix.
- */
-@property (nonatomic, copy) NSString * prefix;
-
-/**
- The upload Id marker.
- */
-@property (nonatomic, copy) NSString * uploadIdMarker;
-
-/**
- The max entries to return. By default it's 100 and it could be up to 1000.
- */
-@property (nonatomic, assign) int32_t maxUploads;
-
-/**
- If not all results are returned this time, the response request includes the NextKeyMarker element to indicate the value of KeyMarker in the next request.
- */
-@property (nonatomic, copy) NSString * nextKeyMarker;
-
-/**
- If not all results are returned this time, the response request includes the NextUploadMarker element to indicate the value of UploadMarker in the next request.
- */
-@property (nonatomic, copy) NSString * nextUploadIdMarker;
-
-/**
- Flag of truncated result. If it's truncated, it means there's more entries to return.
- */
-@property (nonatomic, assign) BOOL isTruncated;
-
-@property (nonatomic, strong, nullable) NSArray * uploads;
-
-/**
- The arrary of common prefixes. Each element is one common prefix.
- */
-@property (nonatomic, strong) NSArray * commonPrefixes;
-@end
-
-/**
  Request to abort a multipart upload
  */
 @interface OSSAbortMultipartUploadRequest : OSSRequest
@@ -1385,11 +1388,6 @@ The result class of listing uploaded parts.
  */
 @property (nonatomic, copy) NSString *contentSHA1;
 
-/**
- * the md5 of content
- */
-@property (nonatomic, copy) NSString *md5String;
-
 
 - (void)cancel;
 @end
@@ -1433,7 +1431,7 @@ The result class of listing uploaded parts.
 
 
 /**
- for more information,Please refer to the link https://help.aliyun.com/document_detail/31989.html
+ for more information,Please refer to the link https://help.aliyun.com/document_detail/31989.html?spm=5176.doc31988.6.908.CkOpBW
  */
 @interface OSSCallBackRequest : OSSRequest
 
@@ -1468,26 +1466,22 @@ The result class of listing uploaded parts.
 
 @end
 
+#pragma mark Others
 
 /**
- for more information,Please refer to the link https://help.aliyun.com/document_detail/55811.html
+ HTTP response parser
  */
-@interface OSSImagePersistRequest : OSSRequest
+@interface OSSHttpResponseParser : NSObject
+@property (nonatomic, strong) NSURL * downloadingFileURL;
+@property (nonatomic, copy) OSSNetworkingOnRecieveDataBlock onRecieveBlock;
+/** 是否开启crc64校验 */
+@property (nonatomic, assign) BOOL crc64Verifiable;
 
-@property (nonatomic, copy) NSString *fromBucket;
-
-@property (nonatomic, copy) NSString *fromObject;
-
-@property (nonatomic, copy) NSString *toBucket;
-
-@property (nonatomic, copy) NSString *toObject;
-
-@property (nonatomic, copy) NSString *action;
-
-@end
-
-@interface OSSImagePersistResult : OSSResult
-
+- (instancetype)initForOperationType:(OSSOperationType)operationType;
+- (void)consumeHttpResponse:(NSHTTPURLResponse *)response;
+- (OSSTask *)consumeHttpResponseBody:(NSData *)data;
+- (nullable id)constructResultObject;
+- (void)reset;
 @end
 
 NS_ASSUME_NONNULL_END

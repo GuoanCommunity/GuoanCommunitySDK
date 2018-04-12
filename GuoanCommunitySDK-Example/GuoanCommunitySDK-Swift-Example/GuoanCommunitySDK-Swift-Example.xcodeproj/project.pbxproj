@@ -174,7 +174,6 @@
 				FE3FB3A420300CEC00636B82 /* Frameworks */,
 				FE3FB3A520300CEC00636B82 /* Resources */,
 				E8FD32C0D3F2669EFE6C872A /* [CP] Embed Pods Frameworks */,
-				DDF4DB4A08BFBC329EBDCC8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,8 +192,6 @@
 				FE3FB3B720300CEC00636B82 /* Sources */,
 				FE3FB3B820300CEC00636B82 /* Frameworks */,
 				FE3FB3B920300CEC00636B82 /* Resources */,
-				47421F412312A3AF465EDC14 /* [CP] Embed Pods Frameworks */,
-				8CAB0699A0391CF66D8B3013 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,8 +211,6 @@
 				FE3FB3C220300CEC00636B82 /* Sources */,
 				FE3FB3C320300CEC00636B82 /* Frameworks */,
 				FE3FB3C420300CEC00636B82 /* Resources */,
-				BE3DA657197A829FF320C3C6 /* [CP] Embed Pods Frameworks */,
-				E6C11148627A82DE05A74E35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,21 +295,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		47421F412312A3AF465EDC14 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-Swift-ExampleTests/Pods-GuoanCommunitySDK-Swift-ExampleTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7F94EF3CE0A61D8AE0663B0B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,21 +311,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8CAB0699A0391CF66D8B3013 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-Swift-ExampleTests/Pods-GuoanCommunitySDK-Swift-ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A26676C475F4D367CE5744B4 /* [CP] Check Pods Manifest.lock */ = {
@@ -382,51 +347,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BE3DA657197A829FF320C3C6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-Swift-ExampleUITests/Pods-GuoanCommunitySDK-Swift-ExampleUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DDF4DB4A08BFBC329EBDCC8C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-Swift-Example/Pods-GuoanCommunitySDK-Swift-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E6C11148627A82DE05A74E35 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuoanCommunitySDK-Swift-ExampleUITests/Pods-GuoanCommunitySDK-Swift-ExampleUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8FD32C0D3F2669EFE6C872A /* [CP] Embed Pods Frameworks */ = {

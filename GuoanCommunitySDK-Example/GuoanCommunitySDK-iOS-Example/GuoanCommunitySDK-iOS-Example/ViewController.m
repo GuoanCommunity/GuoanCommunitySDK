@@ -57,6 +57,14 @@
         return userInfo;
     }];
     
+    [GuoanCommunity onGetStoreInfoHandler:^GuoanCommunityStoreInfo *{
+        GuoanCommunityStoreInfo *storeInfo = [[GuoanCommunityStoreInfo alloc] init];
+        storeInfo.storeId = @"00000000000000000000000000000034";
+        storeInfo.storeName = @"社区门店";
+        storeInfo.storeScheme = @"normal";
+        return storeInfo;
+    }];
+    
     [GuoanCommunity onGetTempAddress:^GuoanCommunityLocation *{
         GuoanCommunityLocation *location = [[GuoanCommunityLocation alloc] init];
         location.cityCode = @"010";
