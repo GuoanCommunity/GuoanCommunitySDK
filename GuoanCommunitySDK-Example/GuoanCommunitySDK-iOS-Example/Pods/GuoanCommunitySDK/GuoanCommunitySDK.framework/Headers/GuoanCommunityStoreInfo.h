@@ -10,9 +10,10 @@
 
 @interface GuoanCommunityStoreInfo : NSObject
 
-@property (nonatomic, strong) NSString * storeId;
-@property (nonatomic, strong) NSString * storeName;
-@property (nonatomic, strong) NSString * storeScheme;
+@property (nonatomic, copy) NSString *cityCode;
+@property (nonatomic, copy) NSString *storeId;
+@property (nonatomic, copy) NSString *storeName;
+@property (nonatomic, copy) NSString *storeScheme;
 
 - (NSDictionary *)toDictionary;
 

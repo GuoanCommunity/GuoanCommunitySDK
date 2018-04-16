@@ -36,7 +36,7 @@ GuoanCommunity.setAppKey("", appSecret: "")
 // 打开国安社区首页
 GuoanCommunity.intoCommunityHome(self)
 // 打开指定页面
-GuoanCommunity.intoCommunity(self, urlString: "http://...")
+GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://...")
 
 GuoanCommunity.onTryLoginHandler {
     print("去登录");
@@ -46,6 +46,12 @@ GuoanCommunity.onShareHandler { (title, desc, link, imgUrl) in
     print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
 }
 
+GuoanCommunity.onPay { (callbackId, orderId, amount) in
+    print("回调id", callbackId ?? "", "订单id", orderId ?? "", "订单金额", amount)
+    
+    GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
+}
+
 GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
     let userInfo = GuoanCommunityUserInfo()
     userInfo.nickname = "nickname"
@@ -53,6 +59,15 @@ GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
     userInfo.mobilephone = "13800000000"
     userInfo.token = "customer_app_72adbdb11637632a4ee770ec53803e19"
     return userInfo
+}
+
+GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
+    let store = GuoanCommunityStoreInfo()
+    store.cityCode = "010"
+    store.storeId = "00000000000000000000000000000034"
+    store.storeName = "社区门店"
+    store.storeScheme = "normal"
+    return store
 }
 
 GuoanCommunity.onGetTempAddress { () -> GuoanCommunityLocation? in

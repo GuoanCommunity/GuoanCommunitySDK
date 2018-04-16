@@ -67,10 +67,17 @@ class ViewController: UIViewController {
         
         GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
             let store = GuoanCommunityStoreInfo()
+            store.cityCode = "010"
             store.storeId = "00000000000000000000000000000034"
             store.storeName = "社区门店"
             store.storeScheme = "normal"
             return store
+        }
+        
+        GuoanCommunity.onPay { (callbackId, orderId, amount) in
+            print("回调id", callbackId ?? "", "订单id", orderId ?? "", "订单金额", amount)
+            
+            GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
         }
     }
     
@@ -79,7 +86,7 @@ class ViewController: UIViewController {
     }
     
     @objc func button1Click() {
-        GuoanCommunity.intoCommunity(self, urlString: "http://demo.mulpush.cn/community")
+        GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://demo.mulpush.cn/community")
     }
 
 }

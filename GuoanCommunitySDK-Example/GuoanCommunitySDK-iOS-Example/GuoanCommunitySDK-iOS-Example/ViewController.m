@@ -59,6 +59,7 @@
     
     [GuoanCommunity onGetStoreInfoHandler:^GuoanCommunityStoreInfo *{
         GuoanCommunityStoreInfo *storeInfo = [[GuoanCommunityStoreInfo alloc] init];
+        storeInfo.cityCode = @"010";
         storeInfo.storeId = @"00000000000000000000000000000034";
         storeInfo.storeName = @"社区门店";
         storeInfo.storeScheme = @"normal";
@@ -76,6 +77,11 @@
     [GuoanCommunity onGetUserAddressList:^NSString *{
         return @"[{\"id\":\"e05a7f8d60384f69b598448979404bf1\",\"storeId\":\"00000000000000000000000000000034\",\"mobilephone\":\"13800000000\",\"adName\":\"朝阳区\",\"cityName\":\"北京市\",\"shoppingCartCount\":0,\"defaultFlg\":\"yes\",\"longitude\":116.46281433,\"provinceCode\":\"110000\",\"latitude\":39.92126846,\"cityCode\":\"010\",\"customerId\":\"308057e8d4b844b7bc83a7e7050317f9\",\"detailAddress\":\"测试小区\",\"placename\":\"北京国际中心\",\"provinceName\":\"北京市\",\"adCode\":\"110105\",\"name\":\"测试\"}]";
     }];
+    
+    [GuoanCommunity onPay:^(NSString *callbackId, NSString *orderId, double amount) {
+        NSLog(@"回调id：%@订单id：%@订单金额：%.2f", callbackId, orderId, amount);
+        [GuoanCommunity messageFromNativeStatus:success callbackId:callbackId];
+    }];
 }
 
 - (void)button0Click {
@@ -83,7 +89,7 @@
 }
 
 - (void)button1Click {
-    [GuoanCommunity intoCommunity:self urlString: @"http://demo.mulpush.cn/community"];
+    [GuoanCommunity intoCommunity:self navigationBarHidden:YES urlString:@"http://demo.mulpush.cn/community"];
 }
 
 @end

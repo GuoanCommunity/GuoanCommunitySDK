@@ -12,6 +12,19 @@
 #import "GuoanCommunityStoreInfo.h"
 #import "GuoanCommunityLocation.h"
 
+/**
+ 回调状态
+ 
+ - succes: 成功
+ - fail: 失败
+ - cancel: 取消
+ */
+typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
+    success = 0,
+    fail,
+    cancel
+};
+
 @interface GuoanCommunity : NSObject
 
 /**
@@ -42,10 +55,10 @@
  跳转到SDK指定H5页面
  
  @param current 当前控制器
+ @param navigationBarHidden 是否隐藏原生导航
  @param urlString H5链接地址
  */
-
-+ (void)intoCommunity:(UIViewController *)current urlString:(NSString *)urlString;
++ (void)intoCommunity:(UIViewController *)current navigationBarHidden:(bool)navigationBarHidden urlString:(NSString *)urlString;
 
 /**
  获取sdk版本号
@@ -106,8 +119,16 @@
 /**
  调起宿主支付
  
- @param handler 回调 (NSString *orderId, double amount)
+ @param handler 回调 (NSString *callbackId, NSString *orderId, double amount)
  */
-+ (void)onPay:(void (^)(NSString *orderId, double amount))handler;
++ (void)onPay:(void (^)(NSString *callbackId, NSString *orderId, double amount))handler;
+
+/**
+ 结果回调给H5
+
+ @param status 回调状态
+ @param callbackId 回调id
+ */
++ (void)messageFromNativeStatus:(GuoanCommunityCallbackStatus)status callbackId:(NSString *)callbackId;
 
 @end
