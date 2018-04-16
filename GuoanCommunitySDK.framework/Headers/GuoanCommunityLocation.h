@@ -10,7 +10,7 @@
 
 @interface GuoanCommunityLocation : NSObject
 
-@property (nonatomic, strong) NSString *cityCode;
+@property (nonatomic, copy) NSString *cityCode;
 @property (nonatomic, assign) CGFloat lat;
 @property (nonatomic, assign) CGFloat lon;
 
