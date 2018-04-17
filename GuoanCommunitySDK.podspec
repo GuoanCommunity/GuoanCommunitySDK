@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'GuoanCommunitySDK'
-  s.version          = '0.6.0'
+  s.version          = '0.7.0'
   s.summary          = 'GuoanCommunitySDK for iOS.'
 
   s.homepage         = 'https://github.com/GuoanCommunity/GuoanCommunitySDK-iOS'
