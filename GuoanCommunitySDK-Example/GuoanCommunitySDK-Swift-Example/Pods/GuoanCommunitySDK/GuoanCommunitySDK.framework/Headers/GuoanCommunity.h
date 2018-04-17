@@ -107,7 +107,7 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
  
  @param handler 回调
  */
-+ (void)onGetUserAddressList:(NSString *(^)(void))handler;
++ (void)onGetUserAddressList:(NSArray *(^)(void))handler;
 
 /**
  调起宿主分享

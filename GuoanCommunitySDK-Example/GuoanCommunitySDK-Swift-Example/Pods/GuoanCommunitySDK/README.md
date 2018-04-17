@@ -78,8 +78,47 @@ GuoanCommunity.onGetTempAddress { () -> GuoanCommunityLocation? in
     return location
 }
 
-GuoanCommunity.onGetUserAddressList { () -> String? in
-    return "[{\"id\":\"e05a7f8d60384f69b598448979404bf1\",\"storeId\":\"00000000000000000000000000000034\",\"mobilephone\":\"13800000000\",\"adName\":\"朝阳区\",\"cityName\":\"北京市\",\"shoppingCartCount\":0,\"defaultFlg\":\"yes\",\"longitude\":116.46281433,\"provinceCode\":\"110000\",\"latitude\":39.92126846,\"cityCode\":\"010\",\"customerId\":\"308057e8d4b844b7bc83a7e7050317f9\",\"detailAddress\":\"测试小区\",\"placename\":\"北京国际中心\",\"provinceName\":\"北京市\",\"adCode\":\"110105\",\"name\":\"测试\"}]"
+GuoanCommunity.onGetUserAddressList { () -> [Any]? in
+    return [
+        [
+            "id" : "92bcbd9694ab4205b63c6e8fbced5cb5",
+            "storeId" : "00000000000000000000000000000034",
+            "mobilephone" : "13012345678",
+            "adName" : "朝阳区",
+            "cityName" : "北京市",
+            "shoppingCartCount" : 16,
+            "defaultFlg" : "no",
+            "longitude" : 116.461,
+            "provinceCode" : "110000",
+            "latitude" : 39.9221,
+            "cityCode" : "010",
+            "customerId" : "02cce689060945a4a6d6613ba863e98b",
+            "detailAddress" : "1楼",
+            "placename" : "关东店北街11号楼",
+            "provinceName" : "北京市",
+            "adCode" : "110105",
+            "name" : "王女士"
+        ],
+        [
+            "id" : "e382fab8e2154ee6b8526ee85519b769",
+            "storeId" : "00000000000000000000000000000y27",
+            "mobilephone" : "13012345678",
+            "adName" : "朝阳区",
+            "cityName" : "北京市",
+            "shoppingCartCount" : 0,
+            "defaultFlg" : "no",
+            "longitude" : 116.38380432,
+            "provinceCode" : "110000",
+            "latitude" : 40.00824738,
+            "cityCode" : "010",
+            "customerId" : "02cce689060945a4a6d6613ba863e98b",
+            "detailAddress" : "2楼",
+            "placename" : "国奥村东区",
+            "provinceName" : "北京市",
+            "adCode" : "110105",
+            "name" : "李先生"
+        ]
+    ]
 }
 ```
 
