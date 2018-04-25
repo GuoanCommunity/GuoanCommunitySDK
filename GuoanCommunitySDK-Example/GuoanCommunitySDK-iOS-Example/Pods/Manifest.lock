@@ -1,14 +1,14 @@
 PODS:
   - AliyunOSSiOS (2.9.2)
   - GTMBase64 (1.0.1)
-  - GuoanCommunitySDK (0.7.0):
+  - GuoanCommunitySDK (0.8.0):
     - AliyunOSSiOS (~> 2.9.2)
     - GTMBase64 (~> 1.0.1)
-    - ZLPhotoBrowser (~> 2.6.5)
+    - ZLPhotoBrowser (~> 2.6.6)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - ZLPhotoBrowser (2.6.5):
+  - ZLPhotoBrowser (2.6.6):
     - SDWebImage
 
 DEPENDENCIES:
@@ -25,9 +25,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AliyunOSSiOS: 0396d0483f7c83edc34e748b0ae17ffa0d7adc8d
   GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
-  GuoanCommunitySDK: 0ea2532df751031688d60cc7751fc390a2c1af75
+  GuoanCommunitySDK: e966c4a570a1871b4703ea99ece3b1f7ec9d81f2
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  ZLPhotoBrowser: e11d54c47cea4c06fb082d73c11d76497a61b929
+  ZLPhotoBrowser: fcfcd448ef0e3c5399b4cec82b97d70df1790817
 
 PODFILE CHECKSUM: aceee1717c5eb1d9d4a18e1f88aee5cb874357bc
 

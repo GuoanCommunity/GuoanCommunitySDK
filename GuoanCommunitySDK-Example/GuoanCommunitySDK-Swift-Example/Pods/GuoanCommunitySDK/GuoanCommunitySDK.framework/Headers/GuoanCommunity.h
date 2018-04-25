@@ -100,14 +100,14 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
 
  @param handler 回调
  */
-+ (void)onGetTempAddress:(GuoanCommunityLocation *(^)(void))handler;
++ (void)onGetTempAddressHandler:(GuoanCommunityLocation *(^)(void))handler;
 
 /**
  调起宿主获取地址列表信息
  
  @param handler 回调
  */
-+ (void)onGetUserAddressList:(NSArray *(^)(void))handler;
++ (void)onGetUserAddressListHandler:(NSArray *(^)(void))handler;
 
 /**
  调起宿主分享
@@ -121,7 +121,7 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
  
  @param handler 回调 (NSString *callbackId, NSString *orderId, double amount)
  */
-+ (void)onPay:(void (^)(NSString *callbackId, NSString *orderId, double amount))handler;
++ (void)onPayHandler:(void (^)(NSString *callbackId, NSString *orderId, double amount))handler;
 
 /**
  结果回调给H5
@@ -130,5 +130,12 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
  @param callbackId 回调id
  */
 + (void)messageFromNativeStatus:(GuoanCommunityCallbackStatus)status callbackId:(NSString *)callbackId;
+
+/**
+ 调起跳转原生页面
+
+ @param handler 回调(NSString *type, NSString *param)
+ */
++ (void)onJumpNativeHandler:(void (^)(NSString *type, NSString *param))handler;
 
 @end

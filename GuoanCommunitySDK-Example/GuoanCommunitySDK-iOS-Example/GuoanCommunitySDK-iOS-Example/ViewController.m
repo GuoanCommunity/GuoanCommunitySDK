@@ -66,7 +66,7 @@
         return storeInfo;
     }];
     
-    [GuoanCommunity onGetTempAddress:^GuoanCommunityLocation *{
+    [GuoanCommunity onGetTempAddressHandler:^GuoanCommunityLocation *{
         GuoanCommunityLocation *location = [[GuoanCommunityLocation alloc] init];
         location.cityCode = @"010";
         location.lat = 39.921636;
@@ -74,7 +74,7 @@
         return location;
     }];
     
-    [GuoanCommunity onGetUserAddressList:^NSArray *{
+    [GuoanCommunity onGetUserAddressListHandler:^NSArray *{
         return [[NSArray alloc] initWithObjects:@{
                                                    @"id" : @"92bcbd9694ab4205b63c6e8fbced5cb5",
                                                    @"storeId" : @"00000000000000000000000000000034",
@@ -96,9 +96,13 @@
                                                    }, nil];
     }];
     
-    [GuoanCommunity onPay:^(NSString *callbackId, NSString *orderId, double amount) {
+    [GuoanCommunity onPayHandler:^(NSString *callbackId, NSString *orderId, double amount) {
         NSLog(@"回调id：%@订单id：%@订单金额：%.2f", callbackId, orderId, amount);
         [GuoanCommunity messageFromNativeStatus:success callbackId:callbackId];
+    }];
+    
+    [GuoanCommunity onJumpNativeHandler:^(NSString *type, NSString *param) {
+        NSLog(@"type：%@  param：%@f", type, param);
     }];
 }
 

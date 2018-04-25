@@ -39,17 +39,11 @@ GuoanCommunity.intoCommunityHome(self)
 GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://...")
 
 GuoanCommunity.onTryLoginHandler {
-    print("去登录");
+    print("去登录")
 }
         
 GuoanCommunity.onShareHandler { (title, desc, link, imgUrl) in
     print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
-}
-
-GuoanCommunity.onPay { (callbackId, orderId, amount) in
-    print("回调id", callbackId ?? "", "订单id", orderId ?? "", "订单金额", amount)
-    
-    GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
 }
 
 GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
@@ -61,16 +55,7 @@ GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
     return userInfo
 }
 
-GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
-    let store = GuoanCommunityStoreInfo()
-    store.cityCode = "010"
-    store.storeId = "00000000000000000000000000000034"
-    store.storeName = "社区门店"
-    store.storeScheme = "normal"
-    return store
-}
-
-GuoanCommunity.onGetTempAddress { () -> GuoanCommunityLocation? in
+GuoanCommunity.onGetTempAddressHandler { () -> GuoanCommunityLocation? in
     let location = GuoanCommunityLocation()
     location.cityCode = "010"
     location.lat = 39.921636
@@ -78,7 +63,7 @@ GuoanCommunity.onGetTempAddress { () -> GuoanCommunityLocation? in
     return location
 }
 
-GuoanCommunity.onGetUserAddressList { () -> [Any]? in
+GuoanCommunity.onGetUserAddressListHandler { () -> [Any]? in
     return [
         [
             "id" : "92bcbd9694ab4205b63c6e8fbced5cb5",
@@ -119,6 +104,25 @@ GuoanCommunity.onGetUserAddressList { () -> [Any]? in
             "name" : "李先生"
         ]
     ]
+}
+
+GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
+    let store = GuoanCommunityStoreInfo()
+    store.cityCode = "010"
+    store.storeId = "00000000000000000000000000000034"
+    store.storeName = "社区门店"
+    store.storeScheme = "normal"
+    return store
+}
+
+GuoanCommunity.onPayHandler { (callbackId, orderId, amount) in
+    print("回调id", callbackId ?? "", "订单id", orderId ?? "", "订单金额", amount)
+    
+    GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
+}
+
+GuoanCommunity.onJumpNativeHandler { (type, param) in
+    print("type =", type ?? "", "param =", param ?? "")
 }
 ```
 

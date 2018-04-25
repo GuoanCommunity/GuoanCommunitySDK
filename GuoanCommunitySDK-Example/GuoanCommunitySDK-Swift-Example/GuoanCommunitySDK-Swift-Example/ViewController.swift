@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             return userInfo
         }
         
-        GuoanCommunity.onGetTempAddress { () -> GuoanCommunityLocation? in
+        GuoanCommunity.onGetTempAddressHandler { () -> GuoanCommunityLocation? in
             let location = GuoanCommunityLocation()
             location.cityCode = "010"
             location.lat = 39.921636
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             return location
         }
         
-        GuoanCommunity.onGetUserAddressList { () -> [Any]? in
+        GuoanCommunity.onGetUserAddressListHandler { () -> [Any]? in
             return [
                 [
                     "id" : "92bcbd9694ab4205b63c6e8fbced5cb5",
@@ -113,10 +113,14 @@ class ViewController: UIViewController {
             return store
         }
         
-        GuoanCommunity.onPay { (callbackId, orderId, amount) in
+        GuoanCommunity.onPayHandler { (callbackId, orderId, amount) in
             print("回调id", callbackId ?? "", "订单id", orderId ?? "", "订单金额", amount)
             
             GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
+        }
+        
+        GuoanCommunity.onJumpNativeHandler { (type, param) in
+            print("type =", type ?? "", "param =", param ?? "")
         }
     }
     
@@ -125,7 +129,8 @@ class ViewController: UIViewController {
     }
     
     @objc func button1Click() {
-        GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://demo.mulpush.cn/community")
+        GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://10.16.33.182:8020/GuoAn-Tourism_H5/index.htm?__hbt=1523929609875")
+//        GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://demo.mulpush.cn/community")
     }
 
 }
