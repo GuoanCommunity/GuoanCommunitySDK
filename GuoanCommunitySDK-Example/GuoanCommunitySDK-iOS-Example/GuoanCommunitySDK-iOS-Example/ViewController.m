@@ -40,11 +40,12 @@
     [button1 setTitle:@"openTouTiao" forState:UIControlStateNormal];
     [button1 addTarget:self action:@selector(button1Click) forControlEvents:UIControlEventTouchUpInside];
     
-    [GuoanCommunity onTryLoginHandler:^{
+    [GuoanCommunity onTryLoginHandler:^(NSString *callbackId) {
         NSLog(@"去登录");
+        [GuoanCommunity messageFromNativeStatus:success callbackId:callbackId];
     }];
     
-    [GuoanCommunity onShareHandler:^(NSString *title, NSString *desc, NSString *link, NSString *imgUrl) {
+    [GuoanCommunity onShareHandler:^(NSString *callbackId, NSString *title, NSString *desc, NSString *link, NSString *imgUrl) {
         NSLog(@"去分享%@, %@, %@, %@", title, desc, link, imgUrl);
     }];
     
@@ -101,7 +102,7 @@
         [GuoanCommunity messageFromNativeStatus:success callbackId:callbackId];
     }];
     
-    [GuoanCommunity onJumpNativeHandler:^(NSString *type, NSString *param) {
+    [GuoanCommunity onJumpNativeHandler:^(NSString *callbackId, NSString *type, NSString *param) {
         NSLog(@"type：%@  param：%@f", type, param);
     }];
 }

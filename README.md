@@ -38,11 +38,12 @@ GuoanCommunity.intoCommunityHome(self)
 // 打开指定页面
 GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://...")
 
-GuoanCommunity.onTryLoginHandler {
+GuoanCommunity.onTryLoginHandler { (callbackId) in
     print("去登录")
+    GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
 }
-        
-GuoanCommunity.onShareHandler { (title, desc, link, imgUrl) in
+
+GuoanCommunity.onShareHandler { (callbackId, title, desc, link, imgUrl) in
     print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
 }
 
@@ -121,7 +122,7 @@ GuoanCommunity.onPayHandler { (callbackId, orderId, amount) in
     GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
 }
 
-GuoanCommunity.onJumpNativeHandler { (type, param) in
+GuoanCommunity.onJumpNativeHandler { (callbackId, type, param) in
     print("type =", type ?? "", "param =", param ?? "")
 }
 ```

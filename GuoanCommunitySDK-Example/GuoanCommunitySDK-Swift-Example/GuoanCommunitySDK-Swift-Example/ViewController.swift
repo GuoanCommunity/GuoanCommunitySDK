@@ -36,11 +36,12 @@ class ViewController: UIViewController {
         button1.setTitle("openTouTiao", for: .normal)
         button1.addTarget(self, action: #selector(button1Click), for: .touchUpInside)
         
-        GuoanCommunity.onTryLoginHandler {
+        GuoanCommunity.onTryLoginHandler { (callbackId) in
             print("去登录")
+            GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
         }
         
-        GuoanCommunity.onShareHandler { (title, desc, link, imgUrl) in
+        GuoanCommunity.onShareHandler { (callbackId, title, desc, link, imgUrl) in
             print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
         }
         
@@ -119,7 +120,7 @@ class ViewController: UIViewController {
             GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
         }
         
-        GuoanCommunity.onJumpNativeHandler { (type, param) in
+        GuoanCommunity.onJumpNativeHandler { (callbackId, type, param) in
             print("type =", type ?? "", "param =", param ?? "")
         }
     }
