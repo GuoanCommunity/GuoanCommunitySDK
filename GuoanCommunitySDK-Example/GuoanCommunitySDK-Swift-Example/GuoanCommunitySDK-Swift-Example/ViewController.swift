@@ -10,6 +10,18 @@ import UIKit
 import GuoanCommunitySDK
 
 class ViewController: UIViewController {
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: self.view.frame, style: .grouped)
+        view.addSubview(tableView)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        return tableView
+    }()
+    
+    private let dataSource = [("open GuoanCommunity SDK", ""), ("open GuoanCommunity TouTiao", "http://demo.mulpush.cn/community"), ("open GuoanCommunity Membership", "http://wx.guoanshequ.ren/dev-wx_js_bundle/membership/#/"), ("open GuoanCommunity lvyou", "http://ly.guoanshequ.top:8021/h5/index.htm")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,21 +32,7 @@ class ViewController: UIViewController {
         
         self.title = "GuoanCommunitySDK Example"
         
-        let button0 = UIButton()
-        view.addSubview(button0)
-        button0.frame = CGRect(x: 0, y: 0, width: 300, height: 22)
-        button0.center = view.center
-        button0.setTitleColor(UIColor.red, for: .normal)
-        button0.setTitle("openGuoanCommunitySDK", for: .normal)
-        button0.addTarget(self, action: #selector(button0Click), for: .touchUpInside)
-        
-        let button1 = UIButton()
-        view.addSubview(button1)
-        button1.frame = CGRect(x: 0, y: 0, width: 300, height: 22)
-        button1.center = CGPoint(x: view.center.x, y: view.center.y + 50)
-        button1.setTitleColor(UIColor.red, for: .normal)
-        button1.setTitle("openTouTiao", for: .normal)
-        button1.addTarget(self, action: #selector(button1Click), for: .touchUpInside)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         
         GuoanCommunity.onTryLoginHandler { (callbackId) in
             print("去登录")
@@ -45,16 +43,16 @@ class ViewController: UIViewController {
             print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
         }
         
-        GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
+        GuoanCommunity.onGetUserInfoHandler { (callbackId) -> GuoanCommunityUserInfo? in
             let userInfo = GuoanCommunityUserInfo()
             userInfo.nickname = "nickname"
             userInfo.imgUrl = "https://imgcdn.guoanshequ.com/pad/bbld76adw738x5o91fu9tiqy6zm1gkq7.png"
             userInfo.mobilephone = "13800000000"
-            userInfo.token = "customer_app_72adbdb11637632a4ee770ec53803e19"
+            userInfo.token = "customer_app_61181e3c455fd200caaaf24a58233de7"
             return userInfo
         }
         
-        GuoanCommunity.onGetTempAddressHandler { () -> GuoanCommunityLocation? in
+        GuoanCommunity.onGetTempAddressHandler { (callbackId) -> GuoanCommunityLocation? in
             let location = GuoanCommunityLocation()
             location.cityCode = "010"
             location.lat = 39.921636
@@ -62,7 +60,7 @@ class ViewController: UIViewController {
             return location
         }
         
-        GuoanCommunity.onGetUserAddressListHandler { () -> [Any]? in
+        GuoanCommunity.onGetUserAddressListHandler { (callbackId) -> [Any]? in
             return [
                 [
                     "id" : "92bcbd9694ab4205b63c6e8fbced5cb5",
@@ -105,7 +103,7 @@ class ViewController: UIViewController {
             ]
         }
         
-        GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
+        GuoanCommunity.onGetStoreInfoHandler { (callbackId) -> GuoanCommunityStoreInfo? in
             let store = GuoanCommunityStoreInfo()
             store.cityCode = "010"
             store.storeId = "00000000000000000000000000000034"
@@ -114,8 +112,8 @@ class ViewController: UIViewController {
             return store
         }
         
-        GuoanCommunity.onPayHandler { (callbackId, orderId, amount) in
-            print("回调id", callbackId ?? "", "订单id", orderId ?? "", "订单金额", amount)
+        GuoanCommunity.onPayHandler { (callbackId, type, orderId, amount, ext) in
+            print("回调id", callbackId ?? "", "type", type ?? "", "订单id", orderId ?? "", "订单金额", amount, "ext", ext ?? [:])
             
             GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
         }
@@ -124,14 +122,29 @@ class ViewController: UIViewController {
             print("type =", type ?? "", "param =", param ?? "")
         }
     }
-    
-    @objc func button0Click() {
-        GuoanCommunity.intoCommunityHome(self)
-    }
-    
-    @objc func button1Click() {
-        GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://10.16.33.182:8020/GuoAn-Tourism_H5/index.htm?__hbt=1523929609875")
-//        GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: "http://demo.mulpush.cn/community")
-    }
 
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
+        cell.textLabel?.text = dataSource[indexPath.row].0
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if dataSource[indexPath.row].1.isEmpty {
+            GuoanCommunity.intoCommunityHome(self)
+        } else {
+            GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: dataSource[indexPath.row].1)
+        }
+    }
+    
 }

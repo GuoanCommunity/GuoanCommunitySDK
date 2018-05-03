@@ -49,7 +49,7 @@
         NSLog(@"去分享%@, %@, %@, %@", title, desc, link, imgUrl);
     }];
     
-    [GuoanCommunity onGetUserInfoHandler:^GuoanCommunityUserInfo *{
+    [GuoanCommunity onGetUserInfoHandler:^GuoanCommunityUserInfo *(NSString *callbackId) {
         GuoanCommunityUserInfo *userInfo = [[GuoanCommunityUserInfo alloc] init];
         userInfo.nickname = @"nickname";
         userInfo.imgUrl = @"https://imgcdn.guoanshequ.com/pad/bbld76adw738x5o91fu9tiqy6zm1gkq7.png";
@@ -58,7 +58,7 @@
         return userInfo;
     }];
     
-    [GuoanCommunity onGetStoreInfoHandler:^GuoanCommunityStoreInfo *{
+    [GuoanCommunity onGetStoreInfoHandler:^GuoanCommunityStoreInfo *(NSString *callbackId) {
         GuoanCommunityStoreInfo *storeInfo = [[GuoanCommunityStoreInfo alloc] init];
         storeInfo.cityCode = @"010";
         storeInfo.storeId = @"00000000000000000000000000000034";
@@ -67,7 +67,7 @@
         return storeInfo;
     }];
     
-    [GuoanCommunity onGetTempAddressHandler:^GuoanCommunityLocation *{
+    [GuoanCommunity onGetTempAddressHandler:^GuoanCommunityLocation *(NSString *callbackId) {
         GuoanCommunityLocation *location = [[GuoanCommunityLocation alloc] init];
         location.cityCode = @"010";
         location.lat = 39.921636;
@@ -75,7 +75,7 @@
         return location;
     }];
     
-    [GuoanCommunity onGetUserAddressListHandler:^NSArray *{
+    [GuoanCommunity onGetUserAddressListHandler:^NSArray *(NSString *callbackId) {
         return [[NSArray alloc] initWithObjects:@{
                                                    @"id" : @"92bcbd9694ab4205b63c6e8fbced5cb5",
                                                    @"storeId" : @"00000000000000000000000000000034",
@@ -97,8 +97,8 @@
                                                    }, nil];
     }];
     
-    [GuoanCommunity onPayHandler:^(NSString *callbackId, NSString *orderId, double amount) {
-        NSLog(@"回调id：%@订单id：%@订单金额：%.2f", callbackId, orderId, amount);
+    [GuoanCommunity onPayHandler:^(NSString *callbackId, NSString *type, NSString *orderId, double amount, NSDictionary *ext) {
+        NSLog(@"回调id：%@type：%@订单id：%@订单金额：%.2fext%@", callbackId, type, orderId, amount, ext);
         [GuoanCommunity messageFromNativeStatus:success callbackId:callbackId];
     }];
     

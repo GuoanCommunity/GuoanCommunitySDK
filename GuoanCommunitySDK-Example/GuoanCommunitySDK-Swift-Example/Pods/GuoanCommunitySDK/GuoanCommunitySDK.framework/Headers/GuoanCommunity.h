@@ -35,14 +35,14 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
  */
 + (void)setAppKey:(NSString *)appKey appSecret:(NSString *)appSecret;
 
-+ (void)setLogEnabled:(BOOL)value;
-
 /**
  设置是否打印sdk的log信息, 默认NO(不打印log).
-
- @param format 设置为YES会输出log信息可供调试参考.除非特殊需要,否则发布产品时需改回NO.
+ 
+ @param value 设置为YES会输出log信息可供调试参考.除非特殊需要,否则发布产品时需改回NO.
  */
-+ (void)log:(NSString *)format, ...;
++ (void)setLogEnabled:(BOOL)value;
+
++ (BOOL)isLogEnabled;
 
 /**
  跳转到SDK首页
@@ -68,7 +68,7 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
 + (NSString *)sdkVersion;
 
 /**
- 调起宿主关闭SDK
+ 关闭SDK回调
  
  @param handler 回调
  */
@@ -79,49 +79,49 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
 
  @param handler 回调
  */
-+ (void)onTryLoginHandler:(void(^)(void))handler;
++ (void)onTryLoginHandler:(void(^)(NSString *callbackId))handler;
 
 /**
  调起宿主获取用户信息
  
  @param handler 回调
  */
-+ (void)onGetUserInfoHandler:(GuoanCommunityUserInfo *(^)(void))handler;
++ (void)onGetUserInfoHandler:(GuoanCommunityUserInfo *(^)(NSString *callbackId))handler;
 
 /**
  调起宿主获取门店信息
  
  @param handler 回调
  */
-+ (void)onGetStoreInfoHandler:(GuoanCommunityStoreInfo *(^)(void))handler;
++ (void)onGetStoreInfoHandler:(GuoanCommunityStoreInfo *(^)(NSString *callbackId))handler;
 
 /**
  调起宿主获取位置信息
 
  @param handler 回调
  */
-+ (void)onGetTempAddressHandler:(GuoanCommunityLocation *(^)(void))handler;
++ (void)onGetTempAddressHandler:(GuoanCommunityLocation *(^)(NSString *callbackId))handler;
 
 /**
  调起宿主获取地址列表信息
  
  @param handler 回调
  */
-+ (void)onGetUserAddressListHandler:(NSArray *(^)(void))handler;
++ (void)onGetUserAddressListHandler:(NSArray *(^)(NSString *callbackId))handler;
 
 /**
  调起宿主分享
 
- @param handler 回调 (NSString *title, NSString *desc, NSString *link, NSString *imgUrl)
+ @param handler 回调 (NSString *callbackId, NSString *title, NSString *desc, NSString *link, NSString *imgUrl)
  */
-+ (void)onShareHandler:(void (^)(NSString *title, NSString *desc, NSString *link, NSString *imgUrl))handler;
++ (void)onShareHandler:(void (^)(NSString *callbackId, NSString *title, NSString *desc, NSString *link, NSString *imgUrl))handler;
 
 /**
  调起宿主支付
  
- @param handler 回调 (NSString *callbackId, NSString *orderId, double amount)
+ @param handler 回调 (NSString *callbackId, NSString *type, NSString *orderId, double amount, NSDictionary *ext)
  */
-+ (void)onPayHandler:(void (^)(NSString *callbackId, NSString *orderId, double amount))handler;
++ (void)onPayHandler:(void (^)(NSString *callbackId, NSString *type, NSString *orderId, double amount, NSDictionary *ext))handler;
 
 /**
  结果回调给H5
@@ -134,8 +134,13 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
 /**
  调起跳转原生页面
 
- @param handler 回调(NSString *type, NSString *param)
+ @param handler 回调(NSString *callbackId, NSString *type, NSString *param)
  */
-+ (void)onJumpNativeHandler:(void (^)(NSString *type, NSString *param))handler;
++ (void)onJumpNativeHandler:(void (^)(NSString *callbackId, NSString *type, NSString *param))handler;
+
+/**
+ 刷新
+ */
++ (void)reload;
 
 @end

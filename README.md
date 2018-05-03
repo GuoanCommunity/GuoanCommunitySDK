@@ -47,16 +47,16 @@ GuoanCommunity.onShareHandler { (callbackId, title, desc, link, imgUrl) in
     print("去分享", title ?? "", desc ?? "", link ?? "", imgUrl ?? "")
 }
 
-GuoanCommunity.onGetUserInfoHandler { () -> GuoanCommunityUserInfo? in
+GuoanCommunity.onGetUserInfoHandler { (callbackId) -> GuoanCommunityUserInfo? in
     let userInfo = GuoanCommunityUserInfo()
     userInfo.nickname = "nickname"
     userInfo.imgUrl = "https://imgcdn.guoanshequ.com/pad/bbld76adw738x5o91fu9tiqy6zm1gkq7.png"
     userInfo.mobilephone = "13800000000"
-    userInfo.token = "customer_app_72adbdb11637632a4ee770ec53803e19"
+    userInfo.token = "customer_app_61181e3c455fd200caaaf24a58233de7"
     return userInfo
 }
 
-GuoanCommunity.onGetTempAddressHandler { () -> GuoanCommunityLocation? in
+GuoanCommunity.onGetTempAddressHandler { (callbackId) -> GuoanCommunityLocation? in
     let location = GuoanCommunityLocation()
     location.cityCode = "010"
     location.lat = 39.921636
@@ -64,7 +64,7 @@ GuoanCommunity.onGetTempAddressHandler { () -> GuoanCommunityLocation? in
     return location
 }
 
-GuoanCommunity.onGetUserAddressListHandler { () -> [Any]? in
+GuoanCommunity.onGetUserAddressListHandler { (callbackId) -> [Any]? in
     return [
         [
             "id" : "92bcbd9694ab4205b63c6e8fbced5cb5",
@@ -107,7 +107,7 @@ GuoanCommunity.onGetUserAddressListHandler { () -> [Any]? in
     ]
 }
 
-GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
+GuoanCommunity.onGetStoreInfoHandler { (callbackId) -> GuoanCommunityStoreInfo? in
     let store = GuoanCommunityStoreInfo()
     store.cityCode = "010"
     store.storeId = "00000000000000000000000000000034"
@@ -116,8 +116,8 @@ GuoanCommunity.onGetStoreInfoHandler { () -> GuoanCommunityStoreInfo? in
     return store
 }
 
-GuoanCommunity.onPayHandler { (callbackId, orderId, amount) in
-    print("回调id", callbackId ?? "", "订单id", orderId ?? "", "订单金额", amount)
+GuoanCommunity.onPayHandler { (callbackId, type, orderId, amount, ext) in
+    print("回调id", callbackId ?? "", "type", type ?? "", "订单id", orderId ?? "", "订单金额", amount, "ext", ext ?? [:])
     
     GuoanCommunity.message(fromNativeStatus: .success, callbackId: callbackId)
 }
