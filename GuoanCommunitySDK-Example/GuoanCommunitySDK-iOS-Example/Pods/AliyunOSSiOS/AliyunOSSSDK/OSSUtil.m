@@ -110,6 +110,17 @@ int32_t const CHUNK_SIZE = 8 * 1024;
     return [body dataUsingEncoding:NSUTF8StringEncoding];
 }
 
++ (NSData *)constructHttpBodyForDeleteMultipleObjects:(NSArray<NSString *> *)keys quiet:(BOOL)quiet {
+    NSMutableString * body = [NSMutableString stringWithString:@"<Delete>\n"];
+    [body appendFormat:@"<Quiet>%@</Quiet>\n",quiet?@"true":@"false"];
+    [keys enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+        [body appendFormat:@"<Object>\n<Key>%@</Key>\n</Object>\n", key];
+    }];
+    [body appendString:@"</Delete>\n"];
+    OSSLogVerbose(@"constucted delete multiple objects body:\n%@", body);
+    return [body dataUsingEncoding:NSUTF8StringEncoding];
+}
+
 + (NSData *)constructHttpBodyForCreateBucketWithLocation:(NSString *)location {
     NSString * body = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                        @"<CreateBucketConfiguration>\n"
@@ -260,6 +271,13 @@ int32_t const CHUNK_SIZE = 8 * 1024;
 }
 
 + (NSString *)fileMD5String:(NSString *)path {
+    BOOL isDirectory = NO;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDirectory];
+    if (isDirectory || !isExist) {
+        OSSLogWarn(@"a file doesn't exists at a specified path(%@)", path);
+        return nil;
+    }
+
     unsigned char * md5Bytes = (unsigned char *)[[self fileMD5:path] bytes];
     return [self convertMd5Bytes2String:md5Bytes];
 }
@@ -379,7 +397,7 @@ int32_t const CHUNK_SIZE = 8 * 1024;
             @"mets": @"application/mets+xml",
             @"mods": @"application/mods+xml",
             @"m21": @"application/mp21",
-            @"mp4": @"application/mp4",
+            @"mp4": @"video/mp4",
             @"doc": @"application/msword",
             @"mxf": @"application/mxf",
             @"bin": @"application/octet-stream",
@@ -1033,15 +1051,15 @@ int32_t const CHUNK_SIZE = 8 * 1024;
         extention = [filePath pathExtension];
     }
 
-    if ((!extention || [extention isEqualToString:@""]) && uploadName) {
+    if (![extention oss_isNotEmpty] && uploadName) {
         extention = [uploadName pathExtension];
     }
 
-    if (!extention || [extention isEqualToString:@""]) {
+    if (![extention oss_isNotEmpty]) {
         return @"application/octet-stream";
     }
 
-    NSString * mimeType = [mimeMap objectForKey:extention];
+    NSString * mimeType = [mimeMap objectForKey:extention.lowercaseString];
     return mimeType ? mimeType : @"application/octet-stream";
 }
 
@@ -1060,10 +1078,10 @@ int32_t const CHUNK_SIZE = 8 * 1024;
     OSSReachability *reach=[OSSReachability reachabilityWithHostName:@"www.apple.com"];
     if(reach){
         switch([reach currentReachabilityStatus]){
-            case ReachableViaWWAN:
+            case OSSReachableViaWWAN:
                 tempMessage = @"[network_state]: connected";
                 break;
-            case ReachableViaWiFi:
+            case OSSReachableViaWiFi:
                 tempMessage = @"[network_state]: connected";
                 break;
             default:
@@ -1196,6 +1214,35 @@ int32_t const CHUNK_SIZE = 8 * 1024;
     
     return [bodyString dataUsingEncoding:NSUTF8StringEncoding];
 }
+
++ (NSData *)constructHttpBodyForImagePersist:(NSString *)action toBucket:(NSString *)toBucket toObjectKey:(NSString *)toObjectKey
+{
+    /*
+     * parameter has checked before
+     */
+    NSMutableString *bodyString = [NSMutableString string];
+    [bodyString appendString:@"x-oss-process="];
+    if ([action rangeOfString:@"image/"].location == NSNotFound)
+    {
+        [bodyString appendString:@"image/"];
+        
+    }
+    [bodyString appendString:action];
+    [bodyString appendString:@"|sys/"];
+    
+    
+    NSString * bucket_base64 = [[toBucket dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    
+    NSString * objectkey_base64 = [[toObjectKey dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    
+    [bodyString appendString:@"saveas,o_"];
+    [bodyString appendString:objectkey_base64];
+    [bodyString appendString:@",b_"];
+    [bodyString appendString:bucket_base64];
+
+    return [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+}
+
 
 @end
 

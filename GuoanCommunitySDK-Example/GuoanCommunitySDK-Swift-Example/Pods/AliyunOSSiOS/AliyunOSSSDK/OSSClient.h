@@ -14,14 +14,17 @@
 @class OSSGetBucketRequest;
 @class OSSGetBucketACLRequest;
 @class OSSGetObjectRequest;
+@class OSSGetObjectACLRequest;
 @class OSSPutObjectRequest;
 @class OSSPutObjectACLRequest;
 @class OSSDeleteObjectRequest;
+@class OSSDeleteMultipleObjectsRequest;
 @class OSSCopyObjectRequest;
 @class OSSInitMultipartUploadRequest;
 @class OSSUploadPartRequest;
 @class OSSCompleteMultipartUploadRequest;
 @class OSSListPartsRequest;
+@class OSSListMultipartUploadsRequest;
 @class OSSAbortMultipartUploadRequest;
 @class OSSAppendObjectRequest;
 @class OSSResumableUploadRequest;
@@ -29,6 +32,7 @@
 @class OSSTask;
 @class OSSExecutor;
 @class OSSCallBackRequest;
+@class OSSImagePersistRequest;
 
 @class OSSNetworking;
 @class OSSClientConfiguration;
@@ -139,6 +143,17 @@ The corresponding RESTFul API: GetObject
 - (OSSTask *)getObject:(OSSGetObjectRequest *)request;
 
 /**
+ * Gets the Access Control List (ACL) of the OSS object.
+ *
+ * @param bucketName
+ *            Bucket name.
+ * @param key
+ *            Object Key.
+ * @return The OSSTask with result of objectAcls instance of the object.
+ */
+- (OSSTask *)getObjectACL:(OSSGetObjectACLRequest *)request;
+
+/**
 The corresponding RESTFul API: PutObject
  Uploads a file.
  */
@@ -175,8 +190,21 @@ The corresponding RESTFul API: copyObject
 - (OSSTask *)copyObject:(OSSCopyObjectRequest *)request;
 
 /**
-The corresponding RESTFul API: DeleteObject
-Deletes an object
+ * Batch deletes the specified files under a specific bucket. If the files
+ * are non-exist, the operation will still return successful.
+ *
+ * @param deleteObjectsRequest
+ *            A OSSDeleteMultipleObjectsRequest instance which specifies the
+ *            bucket and file keys to delete.
+ * @return A OSSTask with result of OSSDeleteMultipleObjectsResult instance which specifies each
+ *         file's result in normal mode or only failed deletions in quite
+ *         mode. By default it's quite mode.
+ */
+- (OSSTask *)deleteMultipleObjects:(OSSDeleteMultipleObjectsRequest *)request;
+
+/**
+ The corresponding RESTFul API: DeleteObject
+ Deletes an object
  */
 - (OSSTask *)deleteObject:(OSSDeleteObjectRequest *)request;
 
@@ -214,6 +242,12 @@ The corresponding RESTFul API: ListParts
 - (OSSTask *)listParts:(OSSListPartsRequest *)request;
 
 /**
+ The corresponding RESTFul API: ListMultipartUploads
+ Lists all multipart uploads with the specified bucket.
+ */
+- (OSSTask *)listMultipartUploads:(OSSListMultipartUploadsRequest *)request;
+
+/**
 The corresponding RESTFul API: AbortMultipartUpload
 Aborts the multipart upload by the specified upload Id.
  Once the multipart upload is aborted by this API, all parts data will be deleted and the upload Id is invalid anymore.
@@ -223,6 +257,7 @@ Aborts the multipart upload by the specified upload Id.
 - (OSSTask *)abortResumableMultipartUpload:(OSSResumableUploadRequest *)request;
 
 - (OSSTask *)triggerCallBack:(OSSCallBackRequest *)request;
+
 
 #pragma mark extention method
 
@@ -301,6 +336,15 @@ Aborts the multipart upload by the specified upload Id.
  */
 - (OSSTask *)sequentialMultipartUpload:(OSSResumableUploadRequest *)request;
 
+/*
+ * image persist action
+ * https://help.aliyun.com/document_detail/55811.html
+ */
+- (OSSTask *)imageActionPersist:(OSSImagePersistRequest *)request;
+
 @end
+
+
+
 
 NS_ASSUME_NONNULL_END
