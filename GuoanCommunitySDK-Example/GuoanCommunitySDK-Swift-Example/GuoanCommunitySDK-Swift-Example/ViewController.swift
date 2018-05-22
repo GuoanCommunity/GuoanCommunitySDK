@@ -122,7 +122,7 @@ class ViewController: UIViewController {
             print("type =", type ?? "", "param =", param ?? "")
             
             switch type {
-            case "webSDK","":
+            case "webSDK":
                 GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: param)
             case "webSDKWithNav":
                 GuoanCommunity.intoCommunity(self, navigationBarHidden: false, urlString: param)
