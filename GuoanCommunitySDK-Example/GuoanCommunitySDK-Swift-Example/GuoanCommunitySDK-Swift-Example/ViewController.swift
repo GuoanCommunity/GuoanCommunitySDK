@@ -120,6 +120,15 @@ class ViewController: UIViewController {
         
         GuoanCommunity.onJumpNativeHandler { (callbackId, type, param) in
             print("type =", type ?? "", "param =", param ?? "")
+            
+            switch type {
+            case "webSDK","":
+                GuoanCommunity.intoCommunity(self, navigationBarHidden: true, urlString: param)
+            case "webSDKWithNav":
+                GuoanCommunity.intoCommunity(self, navigationBarHidden: false, urlString: param)
+            default:
+                break
+            }
         }
     }
 
