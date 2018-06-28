@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    private let dataSource = [("open GuoanCommunity SDK", ""), ("open GuoanCommunity TouTiao", "http://demo.mulpush.cn/community"), ("open GuoanCommunity Membership", "http://wx.guoanshequ.ren/dev-wx_js_bundle/membership/#/"), ("open GuoanCommunity lvyou", "http://ly.guoanshequ.top:8021/h5/index.htm")]
+    private let dataSource = [("open GuoanCommunity SDK", ""), ("open GuoanCommunity TouTiao", "https://tt.guoanshequ.cn/"), ("open GuoanCommunity Membership", "http://wx.guoanshequ.ren/dev-wx_js_bundle/membership/#/"), ("open GuoanCommunity lvyou", "http://ly.guoanshequ.top:8021/h5/index.htm")]
 
     override func viewDidLoad() {
         super.viewDidLoad()

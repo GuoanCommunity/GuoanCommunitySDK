@@ -16,6 +16,7 @@
 		FE3FB3B520300CEC00636B82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3FB3B320300CEC00636B82 /* LaunchScreen.storyboard */; };
 		FE3FB3C020300CEC00636B82 /* GuoanCommunitySDK_Swift_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FB3BF20300CEC00636B82 /* GuoanCommunitySDK_Swift_ExampleTests.swift */; };
 		FE3FB3CB20300CEC00636B82 /* GuoanCommunitySDK_Swift_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FB3CA20300CEC00636B82 /* GuoanCommunitySDK_Swift_ExampleUITests.swift */; };
+		FEA46C9820E4D04700067B23 /* GuoanCommunitySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEA46C9720E4D04700067B23 /* GuoanCommunitySDK.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FE3FB3C620300CEC00636B82 /* GuoanCommunitySDK-Swift-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GuoanCommunitySDK-Swift-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3FB3CA20300CEC00636B82 /* GuoanCommunitySDK_Swift_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuoanCommunitySDK_Swift_ExampleUITests.swift; sourceTree = "<group>"; };
 		FE3FB3CC20300CEC00636B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA46C9720E4D04700067B23 /* GuoanCommunitySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GuoanCommunitySDK.bundle; path = Pods/GuoanCommunitySDK/GuoanCommunitySDK.framework/GuoanCommunitySDK.bundle; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				FE3FB3AA20300CEC00636B82 /* AppDelegate.swift */,
 				FE3FB3B120300CEC00636B82 /* Assets.xcassets */,
+				FEA46C9720E4D04700067B23 /* GuoanCommunitySDK.bundle */,
 				FE3FB3B620300CEC00636B82 /* Info.plist */,
 				FE3FB3B320300CEC00636B82 /* LaunchScreen.storyboard */,
 				FE3FB3AC20300CEC00636B82 /* ViewController.swift */,
@@ -273,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA46C9820E4D04700067B23 /* GuoanCommunitySDK.bundle in Resources */,
 				FE3FB3B520300CEC00636B82 /* LaunchScreen.storyboard in Resources */,
 				FE3FB3B220300CEC00636B82 /* Assets.xcassets in Resources */,
 			);
