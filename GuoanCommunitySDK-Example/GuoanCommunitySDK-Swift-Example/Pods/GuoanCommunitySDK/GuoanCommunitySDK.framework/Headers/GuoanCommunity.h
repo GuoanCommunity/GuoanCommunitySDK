@@ -96,6 +96,13 @@ typedef NS_ENUM(NSUInteger, GuoanCommunityCallbackStatus) {
 + (void)onGetStoreInfoHandler:(GuoanCommunityStoreInfo *(^)(NSString *callbackId))handler;
 
 /**
+ 调起宿主获取门店信息列表
+ 
+ @param handler 回调
+ */
++ (void)onGetStoreInfoListHandler:(NSArray<GuoanCommunityStoreInfo *> *(^)(NSString *callbackId))handler;
+
+/**
  调起宿主获取位置信息
 
  @param handler 回调

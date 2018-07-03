@@ -112,6 +112,22 @@ class ViewController: UIViewController {
             return store
         }
         
+        GuoanCommunity.onGetStoreInfoListHandler { (callbackId) -> [GuoanCommunityStoreInfo]? in
+            let store1 = GuoanCommunityStoreInfo()
+            store1.cityCode = "010"
+            store1.storeId = "00000000000000000000000000000034"
+            store1.storeName = "社区门店"
+            store1.storeScheme = "normal"
+            
+            let store2 = GuoanCommunityStoreInfo()
+            store2.cityCode = "010"
+            store2.storeId = "00000000000000000000000000000035"
+            store2.storeName = "前置仓门店"
+            store2.storeScheme = "front"
+            
+            return [store1, store2]
+        }
+        
         GuoanCommunity.onPayHandler { (callbackId, type, orderId, amount, ext) in
             print("回调id", callbackId ?? "", "type", type ?? "", "订单id", orderId ?? "", "订单金额", amount, "ext", ext ?? [:])
             
