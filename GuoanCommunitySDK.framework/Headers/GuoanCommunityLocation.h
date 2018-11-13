@@ -11,6 +11,7 @@
 @interface GuoanCommunityLocation : NSObject
 
 @property (nonatomic, copy) NSString *cityCode;
+@property (nonatomic, copy) NSString *locAddress;
 @property (nonatomic, assign) double lat;
 @property (nonatomic, assign) double lon;
 
